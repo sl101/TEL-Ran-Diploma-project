@@ -1,11 +1,3 @@
 #TEL RAN diploma project
 
-- UML diagram shop.xml can be viewed at https://app.diagrams.net/
-
-<div width="100%" align="center">
-<img src="./Shop.png"/>
-</div>
-
-<div width="100%" align="center">
-<img src="./shop.xml"/>
-</div>
+-[UML diagram shop.xml](https://drive.google.com/file/d/1OJCJnwSo_TIaP-eDAAK3Pq3j1Pl-Y-Gn/view?usp=sharing)
