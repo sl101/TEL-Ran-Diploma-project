@@ -2,14 +2,14 @@
 
 ## [UML diagram](https://drive.google.com/file/d/1OJCJnwSo_TIaP-eDAAK3Pq3j1Pl-Y-Gn/view?usp=sharing) or [jpg](./assets/shop.jpg)
 
+## [Project layout](https://www.figma.com/file/yNWvXvjZC0t8d9yBOpeEPy/Garden?type=design&node-id=4743-907&t=TqnTA5Oa08Ev1qRj-0)
 
-Перед выполнением проекта необходимо получить допуск. 
-Для допуска необходимо открыть макет:
-https://www.figma.com/file/yNWvXvjZC0t8d9yBOpeEPy/Garden?type=design&node-id=4743-907&t=TqnTA5Oa08Ev1qRj-0
+Project was written using client-server architect, using by REACT library.
 
-И сформировать древо компонентов. 
-
-Требование к результату:
-Необходимо отправить ссылку на облако со схемой (можно использовать любой редактор)
-Необходимо проработать схему до каждой детали, указав также UI-компоненты (часто используемые, кастомные компоненты). В схеме также должны быть компоненты, которые должны находиться в роутинге. 
-Имена компонентов должны быть осмысленными, кратко передавая их назначения (строго будет проверяться). Ориентироваться на подходы, о которых говорилось во время занятия.
+- another libraries used during developing:
+- react-router-dom,
+- redux,
+- react-redux,
+- react-thunk,
+- react-icons,
+- react-uuid,
