@@ -1,4 +1,22 @@
+* {
+	--white-color: #fff;
+
+	--ui-color: #339933;
+	--ui-linear: linear-gradient(45deg, #006300 0%, #339933 100%);
+	--accent-color: #ff32a1;
+
+	--a7-color: #a7a7a7;
+	--92-color: #929292;
+	--8b-color: #8b8b8b;
+	--6c-color: #6c6c6c;
+	--3a-color: #3a3a3a;
+	--2d-color: #2d2d2d;
+
+	--black-color: #000;
+}
+
 html {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 18px;
+	color: var(--black-color)
 }
