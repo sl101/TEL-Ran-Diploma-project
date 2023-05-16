@@ -1,4 +1,4 @@
-# TEL RAN diploma project
+# [TEL RAN diploma project](https://sl101.github.io/TEL-Ran-Diploma-project)
 
 ## [UML diagram](https://drive.google.com/file/d/1OJCJnwSo_TIaP-eDAAK3Pq3j1Pl-Y-Gn/view?usp=sharing) or [jpg](./assets/shop.jpg)
 
@@ -13,3 +13,5 @@ Project was written using client-server architect, using by REACT library.
 - react-thunk,
 - react-icons,
 - react-uuid,
+
+For deploy project to GitHub Pages using gh-pages dependencies
