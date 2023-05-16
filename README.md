@@ -11,8 +11,8 @@ Project was written using client-server architect, using by REACT library.
 - react-router-dom,
 - redux,
 - react-redux,
-- react-thunk,
+- redux-thunk,
 - react-icons,
-- react-uuid,
+- uuid,
 
 For deploy project to GitHub Pages using gh-pages dependencies
