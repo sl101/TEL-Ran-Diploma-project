@@ -13,11 +13,14 @@
 	--2d-color: #2d2d2d;
 
 	--black-color: #000;
+
+	--hover-time: .4s;
 }
 
 html {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 18px;
+	line-height: 20px;
 
 	color: var(--black-color)
 }
@@ -36,4 +39,38 @@ html {
 
 	padding: 0 20px;
 	margin: 0 auto;
+}
+
+.btn_wrapper {
+	border: none;
+	outline: none;
+}
+
+.button {
+	position: relative;
+	padding: 14px 30px;
+
+	font-weight: 700;
+	font-size: 16px;
+
+	border: none;
+	border-radius: 5px;
+
+	background-color: var(--ui-color);
+	color: var(--white-color);
+	transition: text-shadow var(--hover-time) ease;
+
+}
+
+@media (min-width: 762px) {
+
+	.button:hover {
+		text-shadow: -5px 5px 10px var(--black-color);
+	}
+
+	.button:active {
+		top: 1px;
+	}
+
+
 }

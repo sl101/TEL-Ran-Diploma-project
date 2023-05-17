@@ -13,8 +13,8 @@ export const Header = () => {
 						<div className={styles.logo}>
 							<img src={logo} alt="logo" />
 						</div>
-						<NavLink to="/categories">
-							<Button text="Catalog" />
+						<NavLink className={`btn_wrapper`} to="/categories" tabindex="-1">
+							<Button text="Catalog" content="header" />
 						</NavLink>
 					</div>
 					<Navigation />

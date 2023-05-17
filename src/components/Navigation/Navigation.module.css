@@ -1,13 +1,52 @@
 .nav {
+	width: 80%;
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
-	gap: 175px;
+	gap: 13%;
 }
 
 .nav_list {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	gap: 50px;
+	gap: 34px;
+}
+
+.nav_link {
+	display: block;
+	position: relative;
+	padding: 5px 8px;
+	font-weight: 500;
+	font-size: 16px;
+	letter-spacing: 1px;
+	transition: color var(--hover-time) ease;
+}
+
+.nav_cart {
+	width: 30px;
+	height: 30px;
+	padding: 0;
+	outline: none;
+}
+
+.nav_cart svg {
+	width: 100%;
+	height: 100%;
+}
+
+@media (min-width: 762px) {
+
+	.nav_cart:focus svg {
+		color: var(--92-color);
+	}
+
+	.nav_link:hover {
+		color: var(--ui-color);
+	}
+
+	.nav_link:active {
+		top: 1px;
+	}
+
 }

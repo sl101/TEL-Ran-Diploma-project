@@ -7,20 +7,22 @@ export const Navigation = () => {
 		<nav className={styles.nav}>
 			<ul className={styles.nav_list}>
 				<li>
-					<NavLink to="/">Main Page</NavLink>
+					<NavLink className={styles.nav_link} to="/">
+						Main Page
+					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/products" state="all">
+					<NavLink className={styles.nav_link} to="/products" state="all">
 						All products
 					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/products" state="sale">
+					<NavLink className={styles.nav_link} to="/products" state="sale">
 						All sales
 					</NavLink>
 				</li>
 			</ul>
-			<NavLink to="/cart">
+			<NavLink className={`${styles.nav_cart} ${styles.nav_link}`} to="/cart">
 				<HiOutlineShoppingBag />
 			</NavLink>
 		</nav>

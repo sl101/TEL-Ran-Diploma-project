@@ -53,6 +53,7 @@ button {
 	border: transparent;
 	color: transparent;
 	background-color: transparent;
+	cursor: pointer;
 }
 
 a {

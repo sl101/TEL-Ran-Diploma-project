@@ -4,7 +4,7 @@ import { Map } from '../';
 
 export const Footer = () => {
 	return (
-		<footer>
+		<footer className={styles.footer}>
 			<div className="container">
 				<Contacts />
 				<Map />
