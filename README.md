@@ -15,4 +15,8 @@ Project was written using client-server architect, using by REACT library.
 - react-icons,
 - uuid,
 
-For deploy project to GitHub Pages using gh-pages dependencies
+- For deploy project to GitHub Pages using gh-pages dependencies
+
+- For page routing, the Outlet component is used.
+
+- For switch to the ProductListPage, which can display different content, the useLocation hook is used, which defines in state a pointer to the content.

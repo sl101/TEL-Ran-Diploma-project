@@ -1,6 +1,5 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.css';
-import { HiOutlineShoppingBag } from 'react-icons/hi';
 
 export const Navigation = () => {
 	return (
@@ -10,15 +9,16 @@ export const Navigation = () => {
 					<NavLink to="/">Main Page</NavLink>
 				</li>
 				<li>
-					<NavLink to="/products">All products</NavLink>
+					<NavLink to="/products" state="all">
+						All products
+					</NavLink>
 				</li>
 				<li>
-					<NavLink to="/products">All sales</NavLink>
+					<NavLink to="/products" state="sale">
+						All sales
+					</NavLink>
 				</li>
 			</ul>
-			<NavLink to="/cart">
-				<HiOutlineShoppingBag />
-			</NavLink>
 		</nav>
 	);
 };

@@ -1,8 +1,8 @@
+import { Route, Routes } from 'react-router-dom';
 import './fonts/fonts.css';
 import './reset.css';
 import './App.css';
-import { Footer, Header } from './components';
-import { Route, Routes } from 'react-router-dom';
+import { Layout } from './components';
 import {
 	CategoriesListPage,
 	MainPage,
@@ -15,18 +15,16 @@ import {
 function App() {
 	return (
 		<>
-			<Header />
-			<main>
-				<Routes>
-					<Route path="/" element={<MainPage />} />
-					<Route path="/categories" element={<CategoriesListPage />} />
-					<Route path="/products" element={<ProductsListPage />} />
-					<Route path="/products/:id" element={<ProductItemPage />} />
-					<Route path="/cart" element={<ShopingCartPage />} />
+			<Routes>
+				<Route path="/" element={<Layout />}>
+					<Route index element={<MainPage />} />
+					<Route path="categories" element={<CategoriesListPage />} />
+					<Route path="products" element={<ProductsListPage />} />
+					<Route path="products/:id" element={<ProductItemPage />} />
+					<Route path="cart" element={<ShopingCartPage />} />
 					<Route path="*" element={<NotFoundPage />} />
-				</Routes>
-			</main>
-			<Footer />
+				</Route>
+			</Routes>
 		</>
 	);
 }
