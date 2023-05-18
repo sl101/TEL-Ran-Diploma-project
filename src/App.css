@@ -1,8 +1,10 @@
 * {
 	--white-color: #fff;
 
+	--head-color: #a1e2eb;
 	--ui-color: #339933;
 	--ui-light-color: #59c859;
+	--brand-linear: linear-gradient(to top, #1e5799 0%, #2989d8 43%, #a1e2eb 100%);
 	--ui-linear: linear-gradient(45deg, #006300 0%, #339933 100%);
 	--accent-color: #ff32a1;
 
@@ -41,4 +43,10 @@ html {
 
 	padding: 0 20px;
 	margin: 0 auto;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 40px;
 }

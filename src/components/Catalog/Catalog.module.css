@@ -1,0 +1,8 @@
+.catalog {
+	padding: 40px 0 80px;
+}
+
+.catalog_top {
+	display: flex;
+	align-items: center;
+}

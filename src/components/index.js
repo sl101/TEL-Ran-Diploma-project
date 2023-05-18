@@ -10,6 +10,7 @@ export { CategoriesList } from './CategoriesList/CategoriesList';
 export { CategoryItem } from './CategoryItem/CategoryItem';
 
 export { Offer } from './Offer/Offer';
+export { Catalog } from './Catalog/Catalog';
 export { DiscountForm } from './DiscountForm/DiscountForm';
 export { Sale } from './Sale/Sale';
 
