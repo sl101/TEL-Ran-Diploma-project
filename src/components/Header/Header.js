@@ -24,7 +24,7 @@ export const Header = () => {
 							className={styles.btn_wrapper}
 							to="/categories"
 							onClick={toggleActive}
-							// tabindex="-1"
+							tabIndex="-1"
 						>
 							<Button text="Catalog" content="header_btn" />
 						</NavLink>
