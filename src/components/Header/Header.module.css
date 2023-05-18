@@ -1,21 +1,27 @@
-header {
+.header {
 	padding: 20px 0;
 }
 
 .header_wrapper {
-	display: flex;
-	justify-content: space-between;
+	display: grid;
+	grid-template-columns: 1fr 2fr 5fr;
+	justify-items: start;
 	align-items: center;
 }
 
-.header_content {
-	flex-shrink: 0;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	gap: 60px;
-}
 
 .logo {
-	flex-shrink: 0;
+	width: 72px;
+	height: 72px;
 }
+
+.logo img {
+	display: block;
+	width: 100%;
+}
+
+.btn_wrapper {}
+
+
+
+@media (min-width: 762px) {}

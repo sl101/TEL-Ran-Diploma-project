@@ -53,12 +53,14 @@ button {
 	border: transparent;
 	color: transparent;
 	background-color: transparent;
+	outline: none;
 	cursor: pointer;
 }
 
 a {
-	border: transparent;
+	border: none;
 	background-color: transparent;
 	text-decoration: none;
+	outline: none;
 	color: inherit;
 }
