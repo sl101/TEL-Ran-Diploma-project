@@ -1,5 +1,6 @@
 import styles from './Header.module.css';
 import logo from '../../media/images/logo.png';
+import { HashLink } from 'react-router-hash-link';
 
 import { Burger, Button, Navigation } from '../';
 import { NavLink } from 'react-router-dom';
@@ -20,14 +21,16 @@ export const Header = () => {
 						<img src={logo} alt="logo" />
 					</div>
 					<div className={`${styles.menu} ${styles[active]}`}>
-						<NavLink
+						<HashLink
 							className={styles.btn_wrapper}
-							to="/categories"
+							smooth
+							to="#catalog"
+							// to="/categories"
 							onClick={toggleActive}
 							tabIndex="-1"
 						>
 							<Button text="Catalog" content="header_btn" />
-						</NavLink>
+						</HashLink>
 
 						<Navigation onClick={toggleActive} />
 

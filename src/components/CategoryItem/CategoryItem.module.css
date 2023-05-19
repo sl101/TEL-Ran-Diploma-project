@@ -1,0 +1,19 @@
+.category_item {
+	max-width: 318px;
+	text-align: center;
+}
+
+.img_wrapper {
+
+	height: 350px;
+}
+
+.img_wrapper img {
+	height: 100%;
+}
+
+.category_title {
+
+	font-weight: 600;
+	font-size: 18px;
+}

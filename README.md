@@ -9,6 +9,7 @@ Project was written using client-server architect, using by REACT library.
 ### another libraries used during developing:
 
 - react-router-dom,
+- react-router-hash-link,
 - redux,
 - react-redux,
 - redux-thunk,

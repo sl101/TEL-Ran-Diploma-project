@@ -3,6 +3,20 @@
 }
 
 .catalog_top {
+	margin-bottom: 20px;
 	display: flex;
 	align-items: center;
+	gap: 100px;
+}
+
+.catalog_link {
+	width: 120px;
+	height: 30px;
+
+	font-weight: 700;
+	font-size: 12px;
+	line-height: 30px;
+	text-align: center;
+
+	border: 1px solid var(--black-color);
 }
