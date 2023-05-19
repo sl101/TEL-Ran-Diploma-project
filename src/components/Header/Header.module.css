@@ -25,18 +25,11 @@
 	height: 72px;
 }
 
-.logo img {
-	/* display: block;
-	width: 100%; */
-}
-
 .cart_link {
 	position: relative;
 	justify-self: end;
-
 	width: 30px;
 	height: 30px;
-
 	outline: none;
 }
 
@@ -61,13 +54,9 @@
 }
 
 @media (max-width: 762px) {
-	.header {
-		/* position: fixed; */
-		/* width: 100%; */
-	}
-
 	.header_wrapper {
 		position: fixed;
+		z-index: 50;
 		top: 0;
 		left: 0;
 		width: 100%;
@@ -83,11 +72,9 @@
 		bottom: 0;
 
 		padding: 80px 15px;
-		/* display: grid; */
 		grid-template-columns: 1fr 1fr;
 		grid-template-rows: auto 100px;
 		grid-template-areas:
-			/* "logo burger" */
 			"nav nav"
 			"btn cart";
 		justify-items: center;
@@ -108,14 +95,7 @@
 		height: 50px;
 	}
 
-	.logo {
-		/* grid-area: logo; */
-		/* position: relative; */
-		/* top: 20px; */
-	}
-
 	.btn_wrapper {
 		grid-area: btn;
-		/* justify-self: center; */
 	}
 }

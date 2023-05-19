@@ -4,8 +4,8 @@
 	height: 24px;
 	display: none;
 
-	border-top: 2px solid black;
-	border-bottom: 2px solid black;
+	border-top: 2px solid var(--black-color);
+	border-bottom: 2px solid var(--black-color);
 
 	cursor: pointer;
 	transition: border-color var(--hover-time) ease;
@@ -39,8 +39,5 @@
 @media (max-width: 762px) {
 	.burger {
 		display: block;
-		/* justify-self: end; */
-		/* top: 20px;
-		right: 20px; */
 	}
 }

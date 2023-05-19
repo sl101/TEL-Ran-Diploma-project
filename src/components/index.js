@@ -27,8 +27,6 @@ export { Order } from './Order/Order';
 export { Footer } from './Footer/Footer';
 export { Contacts } from './Contacts/Contacts';
 export { Map } from './Map/Map';
-export { MadiaList } from './MadiaList/MadiaList';
-export { MediaItem } from './MediaItem/MediaItem';
 
 export { Button } from './UI/Button/Button';
 export { Input } from './UI/Input/Input';

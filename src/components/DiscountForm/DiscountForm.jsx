@@ -8,7 +8,7 @@ export const DiscountForm = () => {
 	};
 
 	return (
-		<div className={styles.offer_content}>
+		<div>
 			<h4 className={styles.offer_title}>
 				5% off
 				<span>on the first order</span>
