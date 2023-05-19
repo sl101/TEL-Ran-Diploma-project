@@ -16,7 +16,7 @@ export const Order = () => {
 				<p>Total</p>
 				<div>
 					{summ}
-					<span>$</span>
+					<span>&#x24;</span>
 				</div>
 			</div>
 			<form className={styles.order_form} onSubmit={submit}>
