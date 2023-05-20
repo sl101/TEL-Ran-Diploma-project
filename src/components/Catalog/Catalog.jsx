@@ -12,6 +12,10 @@ export const Catalog = () => {
 
 	const categories = useSelector((store) => store.categories);
 
+	const targetCategories = categories
+		.sort(() => Math.random() - 0.5)
+		.slice(0, 4);
+
 	return (
 		<section id="catalog" className={styles.catalog}>
 			<div className="container">
@@ -21,7 +25,7 @@ export const Catalog = () => {
 						<p>All categories </p>
 					</NavLink>
 				</div>
-				<CategoriesList categories={categories.slice(0, 4)} />
+				<CategoriesList categories={targetCategories} />
 			</div>
 		</section>
 	);

@@ -44,7 +44,7 @@ export const ProductsListPage = () => {
 	const { title, target_products } = listData(location.state);
 
 	return (
-		<section>
+		<section className={styles.products_page}>
 			<div className="container">
 				<h1 className="title">{title}</h1>
 				<ProductsList products={target_products} />
