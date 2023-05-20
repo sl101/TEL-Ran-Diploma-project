@@ -1,16 +1,16 @@
-const GET_PRODUCTS = '[PRODUCTS] GET_PRODUCTS';
+const ADD_PRODUCTS_LIST = '[PRODUCTS] ADD_PRODUCTS_LIST';
 
 export const productsReducer = (state = [], action) => {
-	switch (action.payload) {
-		case GET_PRODUCTS:
-			return state;
+	switch (action.type) {
+		case ADD_PRODUCTS_LIST:
+			return [...action.payload];
 
 		default:
 			return state;
 	}
 };
 
-export const getProductsAction = (payload) => ({
-	type: GET_PRODUCTS,
+export const addProductsListAction = (payload) => ({
+	type: ADD_PRODUCTS_LIST,
 	payload,
 });

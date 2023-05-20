@@ -3,8 +3,14 @@
 	height: 525px;
 }
 
-.map_wrapper img {
+/* .map_wrapper img {
 	width: 100%;
 	height: 100%;
 	object-fit: cover;
+} */
+
+
+.map_container {
+	height: 100%;
+	width: 100%;
 }

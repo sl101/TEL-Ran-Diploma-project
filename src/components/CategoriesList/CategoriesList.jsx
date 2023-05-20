@@ -1,13 +1,12 @@
 import styles from './CategoriesList.module.css';
 import { CategoryItem } from '../';
 
-import flowers from '../../media/images/flowers.png';
-
-export const CategoriesList = ({ amount = Infinity }) => {
-	// console.log(amount);
+export const CategoriesList = ({ categories }) => {
 	return (
 		<ul className={styles.categories_list}>
-			<CategoryItem id="1" img={flowers} title="Fertilizer" />
+			{categories.map((category, index) => (
+				<CategoryItem key={index} {...category} />
+			))}
 		</ul>
 	);
 };

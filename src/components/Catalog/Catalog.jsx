@@ -1,8 +1,17 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Catalog.module.css';
 import { CategoriesList } from '../';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { fetchCategoriesList } from '../../asyncActions/categories';
 
 export const Catalog = () => {
+	const dispatch = useDispatch();
+
+	useEffect(() => dispatch(fetchCategoriesList('/categories/all')), []);
+
+	const categories = useSelector((store) => store.categories);
+
 	return (
 		<section id="catalog" className={styles.catalog}>
 			<div className="container">
@@ -12,7 +21,7 @@ export const Catalog = () => {
 						<p>All categories </p>
 					</NavLink>
 				</div>
-				<CategoriesList amount={4} />
+				<CategoriesList categories={categories.slice(0, 4)} />
 			</div>
 		</section>
 	);

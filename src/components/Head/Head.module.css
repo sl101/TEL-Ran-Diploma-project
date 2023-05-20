@@ -1,6 +1,5 @@
 .head {
 	background-color: var(--head-color);
-
 }
 
 .head_wrapper {
@@ -42,9 +41,14 @@
 }
 
 .image_wrapper {
+	height: 600px;
 	align-self: end;
 	position: relative;
 	right: -20px;
+}
+
+.image_wrapper img {
+	height: 100%;
 }
 
 

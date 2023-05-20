@@ -1,6 +1,8 @@
 .product_item {
 	max-width: 318px;
+	width: 100%;
 	min-height: 366px;
+	text-align: center;
 }
 
 .img_wrapper {
@@ -20,7 +22,7 @@
 .price_wrapper {
 	margin: 30px 0 20px;
 	display: flex;
-	justify-content: space-between;
+	justify-content: center;
 	align-items: center;
 	gap: 5px;
 }
