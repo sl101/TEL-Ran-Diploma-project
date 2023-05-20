@@ -9,10 +9,15 @@ Project was written using client-server architect, using by REACT library.
 ### another libraries used during developing:
 
 - react-router-dom,
+- react-router-hash-link,
 - redux,
 - react-redux,
 - redux-thunk,
 - react-icons,
 - uuid,
 
-For deploy project to GitHub Pages using gh-pages dependencies
+- For deploy project to GitHub Pages using gh-pages dependencies
+
+- For page routing, the Outlet component is used.
+
+- For switch to the ProductListPage, which can display different content, the useLocation hook is used, which defines in state a pointer to the content.

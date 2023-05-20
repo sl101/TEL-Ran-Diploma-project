@@ -1,11 +1,17 @@
 * {
 	--white-color: #fff;
 
+	--head-color: #a1e2eb;
 	--ui-color: #339933;
-	--ui-linear: linear-gradient(45deg, #006300 0%, #339933 100%);
+	--ui-light-color: #59c859;
+	/* --brand-linear: linear-gradient(to top, #1e5799 0%, #2989d8 43%, #a1e2eb 100%); */
+	/* --brand-linear: linear-gradient(to top, #5ec45e 0%, #a4ea9f 100%); */
+	--brand-linear: linear-gradient(to bottom, #a1e2eb 0%, #a4ea9f 100%);
+	--ui-linear: linear-gradient(262.69deg, #339933 -0.43%, #006300 104.36%);
 	--accent-color: #ff32a1;
 
 	--a7-color: #a7a7a7;
+	--blur-color: #d8eed3ee;
 	--92-color: #929292;
 	--8b-color: #8b8b8b;
 	--6c-color: #6c6c6c;
@@ -13,10 +19,44 @@
 	--2d-color: #2d2d2d;
 
 	--black-color: #000;
+
+	--hover-time: .4s;
 }
 
 html {
 	font-family: 'Montserrat', sans-serif;
+	font-weight: 500;
 	font-size: 18px;
+	line-height: 20px;
+
 	color: var(--black-color)
+}
+
+body {
+	background-color: var(--a7-color);
+}
+
+#root {
+	max-width: 1440px;
+	min-height: 100vh;
+	margin: 0 auto;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	background-color: var(--white-color);
+}
+
+.container {
+	max-width: 1440px;
+	width: 100%;
+
+	padding: 0 20px;
+	margin: 0 auto;
+}
+
+.title {
+	font-weight: 700;
+	font-size: 40px;
+	line-height: 40px;
 }

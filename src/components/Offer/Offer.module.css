@@ -1,0 +1,31 @@
+.offer {
+	padding: 30px 0;
+	background: var(--ui-linear);
+	min-height: 482px;
+}
+
+.offer_wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 50px;
+}
+
+.image_wrapper {
+	max-width: 442px;
+	object-fit: cover;
+	justify-self: center;
+	align-items: start;
+}
+
+@media (max-width: 1100px) {
+	.offer_wrapper {
+		grid-template-columns: 1fr;
+		justify-items: center;
+	}
+}
+
+@media (max-width: 762px) {
+	.offer_wrapper {
+		justify-items: normal;
+	}
+}

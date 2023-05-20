@@ -1,0 +1,31 @@
+.offer_title {
+	font-weight: 700;
+	font-size: 90px;
+	line-height: 90px;
+	margin-bottom: 50px;
+	color: var(--white-color);
+}
+
+.offer_title span {
+	display: block;
+	font-size: 60px;
+	line-height: 60px;
+}
+
+.offer_form {
+	display: flex;
+	flex-direction: column;
+	gap: 30px;
+}
+
+@media (max-width: 762px) {
+	.offer_title {
+		font-size: 60px;
+		text-align: center;
+	}
+
+	.offer_title span {
+		font-size: 32px;
+		line-height: 32px;
+	}
+}

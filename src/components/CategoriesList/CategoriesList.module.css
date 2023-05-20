@@ -1,0 +1,6 @@
+.categories_list {
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+	gap: 30px;
+}

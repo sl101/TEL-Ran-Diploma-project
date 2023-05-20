@@ -1,5 +1,14 @@
 import styles from './Footer.module.css';
+import { Contacts } from '../';
+import { Map } from '../';
 
 export const Footer = () => {
-	return <div>Footer</div>;
+	return (
+		<footer className={styles.footer}>
+			<div className="container">
+				<Contacts />
+				<Map />
+			</div>
+		</footer>
+	);
 };
