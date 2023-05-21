@@ -6,6 +6,7 @@ import { fetchCategoryById } from '../../asyncActions/categories';
 import { useCallback, useEffect } from 'react';
 
 export const ProductsListPage = () => {
+	console.log('ProductsListPage');
 	const { state } = useLocation();
 	const { id } = useParams();
 	const dispatch = useDispatch();
