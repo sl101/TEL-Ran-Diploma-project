@@ -6,64 +6,72 @@ import { fetchCategoryById } from '../../asyncActions/categories';
 import { useCallback, useEffect, useState } from 'react';
 
 export const ProductsListPage = () => {
-	const [targetData, setTargetData] = useState([]);
-	const [targetTitle, setTargetTitle] = useState('');
-
-	const location = useLocation();
-	const params = useParams();
+	const { state } = useLocation();
+	const { id } = useParams();
 	const dispatch = useDispatch();
+	const show_quantity = 8;
 
 	let products = useSelector((store) => store.products);
 	let category = useSelector((store) => store.category);
 
 	useEffect(() => {
-		params.id && dispatch(fetchCategoryById(`/categories/${params.id}`));
-	}, []);
+		if (id) {
+			dispatch(fetchCategoryById(`/categories/${id}`));
+		}
+	}, [id, dispatch]);
 
-	useEffect(() => {
-		getTargetData(location.state);
-	}, [category, products, location, params, dispatch]);
+	const getRandomProducts = useCallback(
+		(quantity) =>
+			products
+				? products.sort(() => Math.random() - 0.5).slice(0, quantity)
+				: [],
+		[products]
+	);
 
-	let getTargetData = useCallback((location_state) => {
-		const show_quantity = 8;
-		switch (location_state) {
-			case 'all':
-				setTargetTitle('All products');
-				setTargetData([
-					...products.sort(() => Math.random() - 0.5).slice(0, show_quantity),
-				]);
-				break;
-
-			case 'sale':
-				setTargetTitle('Products with sale');
-				setTargetData([
-					...products
+	const getSaleProducts = useCallback(
+		(quantity) =>
+			products
+				? products
 						.filter((product) => product.discont_price)
 						.sort(() => Math.random() - 0.5)
-						.slice(0, show_quantity),
-				]);
-				break;
+						.slice(0, quantity)
+				: [],
+		[products]
+	);
 
-			case 'category':
-				if (category.data) {
-					setTargetTitle(category.category.title);
-					setTargetData([
-						...category.data
-							.sort(() => Math.random() - 0.5)
-							.slice(0, show_quantity),
-					]);
-				}
-				break;
+	const getCategoryProducts = useCallback(
+		(quantity) =>
+			category.data
+				? category.data.sort(() => Math.random() - 0.5).slice(0, quantity)
+				: [],
+		[category.data]
+	);
 
-			default:
-				break;
-		}
-	});
+	const createDataMap = useCallback(() => {
+		return {
+			all: {
+				title: 'All products',
+				getData: () => getRandomProducts(show_quantity),
+			},
+			sale: {
+				title: 'Products with sale',
+				getData: () => getSaleProducts(show_quantity),
+			},
+			category: {
+				title: category.data ? category.category.title : '',
+				getData: () => getCategoryProducts(show_quantity),
+			},
+		};
+	}, []);
+
+	const dataMap = createDataMap();
+	const { title, getData } = dataMap[state] || {};
+	const targetData = getData();
 
 	return (
 		<section className={styles.products_page}>
 			<div className="container">
-				<h1 className="title">{targetTitle}</h1>
+				<h1 className="title">{title}</h1>
 				<ProductsList products={targetData} />
 			</div>
 		</section>
