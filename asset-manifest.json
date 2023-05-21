@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/TEL-Ran-Diploma-project/static/css/main.e1e59ede.css",
-    "main.js": "/TEL-Ran-Diploma-project/static/js/main.d6d9f0f1.js",
-    "static/media/flowers.png": "/TEL-Ran-Diploma-project/static/media/flowers.219152481630c1bc0f3f.png",
+    "main.css": "/TEL-Ran-Diploma-project/static/css/main.111c3f73.css",
+    "main.js": "/TEL-Ran-Diploma-project/static/js/main.98a20a7e.js",
     "static/media/Montserrat-Bold.woff": "/TEL-Ran-Diploma-project/static/media/Montserrat-Bold.f29395fabb87619d91d3.woff",
     "static/media/Montserrat-Medium.woff": "/TEL-Ran-Diploma-project/static/media/Montserrat-Medium.140745a50b1d0fb10ce5.woff",
     "static/media/Montserrat-SemiBold.woff": "/TEL-Ran-Diploma-project/static/media/Montserrat-SemiBold.a57a8c47f94d8a1690f1.woff",
+    "static/media/flowers.png": "/TEL-Ran-Diploma-project/static/media/flowers.7266d13dcc7abff46006.png",
     "static/media/dwarf.png": "/TEL-Ran-Diploma-project/static/media/dwarf.c036eea09188ab215dcb.png",
     "static/media/Montserrat-Bold.woff2": "/TEL-Ran-Diploma-project/static/media/Montserrat-Bold.11263e847e4851dea50b.woff2",
     "static/media/Montserrat-Medium.woff2": "/TEL-Ran-Diploma-project/static/media/Montserrat-Medium.214fb9402a627ac80276.woff2",
     "static/media/Montserrat-SemiBold.woff2": "/TEL-Ran-Diploma-project/static/media/Montserrat-SemiBold.4bbde92d3f440918b593.woff2",
     "index.html": "/TEL-Ran-Diploma-project/index.html",
-    "main.e1e59ede.css.map": "/TEL-Ran-Diploma-project/static/css/main.e1e59ede.css.map",
-    "main.d6d9f0f1.js.map": "/TEL-Ran-Diploma-project/static/js/main.d6d9f0f1.js.map"
+    "main.111c3f73.css.map": "/TEL-Ran-Diploma-project/static/css/main.111c3f73.css.map",
+    "main.98a20a7e.js.map": "/TEL-Ran-Diploma-project/static/js/main.98a20a7e.js.map"
   },
   "entrypoints": [
-    "static/css/main.e1e59ede.css",
-    "static/js/main.d6d9f0f1.js"
+    "static/css/main.111c3f73.css",
+    "static/js/main.98a20a7e.js"
   ]
 }
