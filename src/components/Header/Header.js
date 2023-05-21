@@ -13,20 +13,36 @@ export const Header = () => {
 		setActive(active === 'active' ? '' : 'active');
 	};
 
+	const scrollWithOffset = (el) => {
+		const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+		const yOffset = window.innerWidth < 762 ? -98 : 0;
+		window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+	};
+
 	return (
 		<header className={styles.header}>
 			<div className="container">
 				<div className={styles.header_wrapper}>
-					<div className={styles.logo}>
-						<img src={logo} alt="logo" />
-					</div>
+					<HashLink
+						className={styles.logo_wrapper}
+						smooth
+						to="/#home"
+						onClick={() => setActive(false)}
+						scroll={(el) => scrollWithOffset(el)}
+					>
+						<div className={styles.logo}>
+							<img src={logo} alt="logo" />
+						</div>
+					</HashLink>
+
 					<div className={`${styles.menu} ${styles[active]}`}>
 						<HashLink
 							className={styles.btn_wrapper}
 							smooth
-							to="#catalog"
+							to="/#catalog"
 							onClick={toggleActive}
 							tabIndex="-1"
+							scroll={(el) => scrollWithOffset(el)}
 						>
 							<Button text="Catalog" content="header_btn" />
 						</HashLink>

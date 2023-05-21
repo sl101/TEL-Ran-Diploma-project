@@ -43,6 +43,7 @@ export const ProductsListPage = () => {
 	);
 
 	useEffect(() => {
+		window.scrollTo(0, 0);
 		if (id) {
 			dispatch(fetchCategoryById(`/categories/${id}`));
 		}

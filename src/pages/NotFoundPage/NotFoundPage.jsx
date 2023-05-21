@@ -1,5 +1,9 @@
+import { useEffect } from 'react';
 import styles from './NotFoundPage.module.css';
 
 export const NotFoundPage = () => {
-	return <div>NotFoundPage</div>;
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
+	return <section className={styles.notfound}>NotFoundPage</section>;
 };

@@ -3,6 +3,11 @@ import flowers from '../../media/images/flowers.png';
 import { HashLink } from 'react-router-hash-link';
 
 export const Head = () => {
+	const scrollWithOffset = (el) => {
+		const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+		const yOffset = window.innerWidth < 762 ? -98 : 0;
+		window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+	};
 	return (
 		<section className={styles.head}>
 			<div className="container">
@@ -12,7 +17,12 @@ export const Head = () => {
 							Sale
 							<span>New season</span>
 						</h1>
-						<HashLink smooth to="#sale" className={styles.head_link}>
+						<HashLink
+							smooth
+							to="#sale"
+							className={styles.head_link}
+							scroll={(el) => scrollWithOffset(el)}
+						>
 							Sale
 						</HashLink>
 					</div>
