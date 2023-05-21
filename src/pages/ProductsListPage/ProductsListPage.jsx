@@ -3,7 +3,7 @@ import { ProductsList } from '../../components';
 import styles from './ProductsListPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategoryById } from '../../asyncActions/categories';
-import { useCallback, useEffect, useState } from 'react';
+import { useCallback, useEffect } from 'react';
 
 export const ProductsListPage = () => {
 	const { state } = useLocation();
@@ -13,12 +13,6 @@ export const ProductsListPage = () => {
 
 	let products = useSelector((store) => store.products);
 	let category = useSelector((store) => store.category);
-
-	useEffect(() => {
-		if (id) {
-			dispatch(fetchCategoryById(`/categories/${id}`));
-		}
-	}, [id, dispatch]);
 
 	const getRandomProducts = useCallback(
 		(quantity) =>
@@ -47,24 +41,27 @@ export const ProductsListPage = () => {
 		[category.data]
 	);
 
-	const createDataMap = useCallback(() => {
-		return {
-			all: {
-				title: 'All products',
-				getData: () => getRandomProducts(show_quantity),
-			},
-			sale: {
-				title: 'Products with sale',
-				getData: () => getSaleProducts(show_quantity),
-			},
-			category: {
-				title: category.data ? category.category.title : '',
-				getData: () => getCategoryProducts(show_quantity),
-			},
-		};
-	}, []);
+	useEffect(() => {
+		if (id) {
+			dispatch(fetchCategoryById(`/categories/${id}`));
+		}
+	}, [id, dispatch]);
 
-	const dataMap = createDataMap();
+	const dataMap = {
+		all: {
+			title: 'All products',
+			getData: () => getRandomProducts(show_quantity),
+		},
+		sale: {
+			title: 'Products with sale',
+			getData: () => getSaleProducts(show_quantity),
+		},
+		category: {
+			title: category.data ? category.category.title : '',
+			getData: () => getCategoryProducts(show_quantity),
+		},
+	};
+
 	const { title, getData } = dataMap[state] || {};
 	const targetData = getData();
 
