@@ -25,7 +25,6 @@ export const Header = () => {
 							className={styles.btn_wrapper}
 							smooth
 							to="#catalog"
-							// to="/categories"
 							onClick={toggleActive}
 							tabIndex="-1"
 						>

@@ -1,53 +1,70 @@
-import { useLocation } from 'react-router-dom';
+import { useLocation, useParams } from 'react-router-dom';
 import { ProductsList } from '../../components';
 import styles from './ProductsListPage.module.css';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchCategoryById } from '../../asyncActions/categories';
+import { useCallback, useEffect, useState } from 'react';
 
 export const ProductsListPage = () => {
+	const [targetData, setTargetData] = useState([]);
+	const [targetTitle, setTargetTitle] = useState('');
+
 	const location = useLocation();
+	const params = useParams();
+	const dispatch = useDispatch();
 
-	const products = useSelector((store) => store.products);
-	const categories = useSelector((store) => store.categories);
+	let products = useSelector((store) => store.products);
+	let category = useSelector((store) => store.category);
 
-	const listData = (location_state) => {
+	useEffect(() => {
+		params.id && dispatch(fetchCategoryById(`/categories/${params.id}`));
+	}, []);
+
+	useEffect(() => {
+		getTargetData(location.state);
+	}, [category, products, location, params, dispatch]);
+
+	let getTargetData = useCallback((location_state) => {
 		const show_quantity = 8;
-		const category_id = 1;
-		console.log('location_state: ', location_state);
 		switch (location_state) {
 			case 'all':
-				return {
-					title: 'All products',
-					target_products: products
-						.sort(() => Math.random() - 0.5)
-						.slice(0, show_quantity),
-				};
+				setTargetTitle('All products');
+				setTargetData([
+					...products.sort(() => Math.random() - 0.5).slice(0, show_quantity),
+				]);
+				break;
 
 			case 'sale':
-				return {
-					title: 'Products with sale',
-					target_products: products
+				setTargetTitle('Products with sale');
+				setTargetData([
+					...products
 						.filter((product) => product.discont_price)
 						.sort(() => Math.random() - 0.5)
 						.slice(0, show_quantity),
-				};
+				]);
+				break;
+
+			case 'category':
+				if (category.data) {
+					setTargetTitle(category.category.title);
+					setTargetData([
+						...category.data
+							.sort(() => Math.random() - 0.5)
+							.slice(0, show_quantity),
+					]);
+				}
+				break;
 
 			default:
-				return {
-					title: 'Tools and equipment',
-					target_products: categories.filter(
-						(category) => category.id === category_id
-					),
-				};
+				break;
 		}
-	};
-
-	const { title, target_products } = listData(location.state);
+	});
 
 	return (
 		<section className={styles.products_page}>
 			<div className="container">
-				<h1 className="title">{title}</h1>
-				<ProductsList products={target_products} />
+				<h1 className="title">{targetTitle}</h1>
+				<ProductsList products={targetData} />
 			</div>
 		</section>
 	);

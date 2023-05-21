@@ -20,6 +20,7 @@ function App() {
 					<Route index element={<MainPage />} />
 					<Route path="categories" element={<CategoriesListPage />} />
 					<Route path="products" element={<ProductsListPage />} />
+					<Route path="categories/:id" element={<ProductsListPage />} />
 					<Route path="products/:id" element={<ProductItemPage />} />
 					<Route path="cart" element={<ShopingCartPage />} />
 					<Route path="*" element={<NotFoundPage />} />
