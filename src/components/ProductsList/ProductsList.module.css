@@ -1,8 +1,9 @@
 .products_list {
 	margin-top: 80px;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(276px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	justify-items: center;
-	grid-column-gap: 35px;
+	justify-content: center;
+	grid-column-gap: 20px;
 	grid-row-gap: 55px;
 }

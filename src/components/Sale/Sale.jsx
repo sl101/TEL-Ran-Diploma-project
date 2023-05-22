@@ -1,13 +1,15 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { ProductsList } from '../';
 import styles from './Sale.module.css';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { fetchProductsList } from './../../asyncActions/products';
 
 export const Sale = () => {
 	let dispatch = useDispatch();
 
-	useEffect(() => dispatch(fetchProductsList('/products/all')), []);
+	const [listStyle, setListStyle] = useState({ justifyContent: 'start' });
+
+	useEffect(() => dispatch(fetchProductsList('/products/all')), [dispatch]);
 
 	const products = useSelector((store) => store.products);
 
@@ -16,11 +18,19 @@ export const Sale = () => {
 		.sort(() => Math.random() - 0.5)
 		.slice(0, 3);
 
+	useEffect(() => {
+		setListStyle(
+			window.innerWidth < 1200
+				? { justifyContent: 'center' }
+				: { justifyContent: 'start' }
+		);
+	}, []);
+
 	return (
 		<section id="sale" className={styles.sale}>
 			<div className="container">
 				<h2 className="title">Sale</h2>
-				<ProductsList products={targetProducts} />
+				<ProductsList products={targetProducts} listJustify={listStyle} />
 			</div>
 		</section>
 	);

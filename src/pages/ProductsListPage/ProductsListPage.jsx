@@ -4,6 +4,7 @@ import styles from './ProductsListPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchCategoryById } from '../../asyncActions/categories';
 import { useCallback, useEffect } from 'react';
+import { fetchProductsList } from '../../asyncActions/products';
 
 export const ProductsListPage = () => {
 	console.log('ProductsListPage');
@@ -12,7 +13,9 @@ export const ProductsListPage = () => {
 	const dispatch = useDispatch();
 	const show_quantity = 8;
 
-	let products = useSelector((store) => store.products);
+	let products =
+		useSelector((store) => store.products) ||
+		dispatch(fetchProductsList('/products/all'));
 	let category = useSelector((store) => store.category);
 
 	const getRandomProducts = useCallback(
@@ -46,6 +49,12 @@ export const ProductsListPage = () => {
 			dispatch(fetchCategoryById(`/categories/${id}`));
 		}
 	}, [id, dispatch]);
+
+	useEffect(() => {
+		if (!products.length) {
+			dispatch(fetchProductsList('/products/all'));
+		}
+	}, [products, dispatch]);
 
 	const dataMap = {
 		all: {
