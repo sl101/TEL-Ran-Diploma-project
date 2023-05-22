@@ -6,6 +6,8 @@
 }
 
 .img_wrapper {
+	position: relative;
+	z-index: 10;
 	height: 276px;
 	overflow: hidden;
 }
@@ -64,7 +66,13 @@
 	.product_item:focus {}
 
 	.product_item:hover .img_wrapper img {
-		transform: scale(1.1);
+		/* transform: scale(1.1); */
+	}
+
+
+	.product_item:hover .img_wrapper button {
+		position: absolute;
+		top: 65%;
 	}
 
 	.product_item:active {}

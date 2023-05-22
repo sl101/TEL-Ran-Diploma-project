@@ -7,7 +7,7 @@ import { useCallback, useEffect } from 'react';
 import { fetchProductsList } from '../../asyncActions/products';
 
 export const ProductsListPage = () => {
-	console.log('ProductsListPage');
+	// console.log('ProductsListPage');
 	const { state } = useLocation();
 	const { id } = useParams();
 	const dispatch = useDispatch();

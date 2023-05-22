@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom';
-import { HiOutlineShoppingBag } from 'react-icons/hi';
 import styles from './Navigation.module.css';
 
 export const Navigation = ({ ...other }) => {
@@ -32,9 +31,6 @@ export const Navigation = ({ ...other }) => {
 					</NavLink>
 				</li>
 			</ul>
-			{/* <NavLink className={`${styles.nav_cart} ${styles.nav_link}`} to="/cart">
-				<HiOutlineShoppingBag />
-			</NavLink> */}
 		</nav>
 	);
 };

@@ -20,15 +20,14 @@ export const Header = () => {
 	};
 
 	return (
-		<header className={styles.header}>
+		<header id="header" className={styles.header}>
 			<div className="container">
 				<div className={styles.header_wrapper}>
 					<HashLink
 						className={styles.logo_wrapper}
 						smooth
-						to="/#home"
+						to="/#header"
 						onClick={() => setActive(false)}
-						scroll={(el) => scrollWithOffset(el)}
 					>
 						<div className={styles.logo}>
 							<img src={logo} alt="logo" />
