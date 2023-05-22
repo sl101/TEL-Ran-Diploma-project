@@ -36,9 +36,7 @@ export const ProductsListPage = () => {
 
 	const getCategoryProducts = useCallback(
 		(quantity) =>
-			category.data
-				? category.data.sort(() => Math.random() - 0.5).slice(0, quantity)
-				: [],
+			category.data?.sort(() => Math.random() - 0.5).slice(0, quantity),
 		[category.data]
 	);
 
