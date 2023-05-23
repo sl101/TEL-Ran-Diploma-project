@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import styles from './ProductInfoPage.module.css';
-import { useParams } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductByID } from '../../asyncActions/products';
 import { base_url } from '../../asyncActions/url';
@@ -8,9 +8,9 @@ import { ProductPrice } from './../../components/ProductPrice/ProductPrice';
 import { Button } from './../../components/UI/Button/Button';
 
 export const ProductInfoPage = () => {
-	console.log('ProductInfoPage');
 	const { id } = useParams();
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 
 	const productInfo = useSelector((store) => store.productInfo);
 
@@ -19,11 +19,15 @@ export const ProductInfoPage = () => {
 	}, []);
 
 	useEffect(() => {
-		console.log(id);
+		if (productInfo[0] === '*') {
+			navigate('/*');
+		}
+	}, [navigate, productInfo]);
+
+	useEffect(() => {
 		id && dispatch(fetchProductByID(`/products/${id}`));
 	}, [dispatch, id]);
 
-	console.log(productInfo);
 	const { title, image, price, discont_price, description } =
 		productInfo[0] || {};
 	return (

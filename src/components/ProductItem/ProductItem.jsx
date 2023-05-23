@@ -8,7 +8,6 @@ import { NavLink } from 'react-router-dom';
 
 export const ProductItem = (props) => {
 	const { id, image, title, price, discont_price } = props;
-	// console.log('ProductItem');
 
 	const dispatch = useDispatch();
 

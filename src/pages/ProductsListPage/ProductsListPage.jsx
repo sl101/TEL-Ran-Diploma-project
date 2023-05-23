@@ -1,4 +1,4 @@
-import { useLocation, useParams } from 'react-router-dom';
+import { useLocation, useNavigate, useParams } from 'react-router-dom';
 import { ProductsList } from '../../components';
 import styles from './ProductsListPage.module.css';
 import { useDispatch, useSelector } from 'react-redux';
@@ -11,6 +11,7 @@ export const ProductsListPage = () => {
 	const { state } = useLocation();
 	const { id } = useParams();
 	const dispatch = useDispatch();
+	const navigate = useNavigate();
 	const show_quantity = 8;
 
 	let products =
@@ -44,7 +45,16 @@ export const ProductsListPage = () => {
 	);
 
 	useEffect(() => {
+		if (!dataMap[state]) {
+			navigate('/*');
+		}
+	}, [state, navigate]);
+
+	useEffect(() => {
 		window.scrollTo(0, 0);
+	}, []);
+
+	useEffect(() => {
 		if (id) {
 			dispatch(fetchCategoryById(`/categories/${id}`));
 		}
@@ -56,7 +66,7 @@ export const ProductsListPage = () => {
 		}
 	}, [products, dispatch]);
 
-	const dataMap = {
+	let dataMap = {
 		all: {
 			title: 'All products',
 			getData: () => getRandomProducts(show_quantity),
@@ -71,8 +81,8 @@ export const ProductsListPage = () => {
 		},
 	};
 
-	const { title, getData } = dataMap[state] || {};
-	const targetData = getData();
+	const { title, getData } = dataMap[state] || [];
+	const targetData = dataMap[state] && getData();
 
 	return (
 		<section className={styles.products_page}>

@@ -1,4 +1,5 @@
 .button {
+	position: relative;
 	font-weight: 700;
 
 	border: 2px solid transparent;
@@ -126,6 +127,7 @@
 	}
 
 	.button:active {
+		top: 1px;
 		text-shadow: 0 0 0 transparent;
 		border-color: transparent;
 		background-color: var(--ui-color);

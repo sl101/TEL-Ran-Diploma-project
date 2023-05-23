@@ -3,8 +3,11 @@ const GET_PRODUCT = '[PRODUCT] GET_PRODUCT';
 export const productInfoReducer = (state = [], action) => {
 	switch (action.type) {
 		case GET_PRODUCT:
-			console.log('productInfoReducer: ', action.payload);
-			return [...action.payload];
+			if (!action.payload || action.payload.status === 'ERR') {
+				return ['*'];
+			} else {
+				return [...action.payload];
+			}
 
 		default:
 			return state;
