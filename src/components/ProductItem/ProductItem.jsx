@@ -1,5 +1,6 @@
 import { base_url } from '../../asyncActions/url';
 import styles from './ProductItem.module.css';
+import { ProductPrice } from '../';
 import { Button } from './../UI/Button/Button';
 import { useDispatch } from 'react-redux';
 import { addToCartAction } from '../../store/cartReducer';
@@ -10,8 +11,6 @@ export const ProductItem = (props) => {
 	// console.log('ProductItem');
 
 	const dispatch = useDispatch();
-	const discont =
-		discont_price && Math.round(((price - discont_price) * 100) / price);
 
 	const addToCart = () => {
 		dispatch(addToCartAction(props));
@@ -29,24 +28,7 @@ export const ProductItem = (props) => {
 					/>
 				</div>
 				<div className={styles.product_content}>
-					<div
-						className={styles.price_wrapper}
-						style={
-							discont && {
-								justifyContent: 'space-between',
-							}
-						}
-					>
-						<p className={styles.price}>
-							{discont ? discont_price : price}&#x24;
-						</p>
-						{discont && (
-							<>
-								<p className={styles.old_price}>{price}&#x24;</p>
-								<p className={styles.discount}>-{discont}%</p>
-							</>
-						)}
-					</div>
+					<ProductPrice price={price} discont_price={discont_price} />
 					<h3 className={styles.product_title}>{title}</h3>
 				</div>
 			</NavLink>
