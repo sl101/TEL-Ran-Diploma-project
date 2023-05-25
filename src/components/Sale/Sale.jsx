@@ -7,14 +7,14 @@ import { fetchProductsList } from './../../asyncActions/products';
 export const Sale = () => {
 	let dispatch = useDispatch();
 
-	useEffect(() => dispatch(fetchProductsList('/products/all')), []);
+	useEffect(() => dispatch(fetchProductsList('/products/all')), [dispatch]);
 
 	const products = useSelector((store) => store.products);
 
 	const targetProducts = products
 		.filter((product) => product.discont_price)
 		.sort(() => Math.random() - 0.5)
-		.slice(0, 3);
+		.slice(0, 4);
 
 	return (
 		<section id="sale" className={styles.sale}>

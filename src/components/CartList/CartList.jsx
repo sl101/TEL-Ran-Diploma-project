@@ -1,5 +1,17 @@
+import { useSelector } from 'react-redux';
 import styles from './CartList.module.css';
+import { CartItem } from '../CartItem/CartItem';
 
 export const CartList = () => {
-	return <div>CartList</div>;
+	const cartList = useSelector((store) => store.cart.cartList);
+	// const { cartList } = cart;
+	// console.log('CartList: ', cartList);
+
+	return (
+		<div className={styles.cart_list}>
+			{cartList.map((item, index) => (
+				<CartItem key={index} {...item} />
+			))}
+		</div>
+	);
 };

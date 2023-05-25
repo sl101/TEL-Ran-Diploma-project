@@ -1,10 +1,7 @@
 import { Button, Input } from '../';
 import styles from './Order.module.css';
 
-export const Order = () => {
-	// export const Order = ({summ}) => {
-
-	const summ = '3700,00';
+export const Order = ({ totalSumm }) => {
 	const submit = (e) => {
 		e.preventDefault();
 	};
@@ -15,7 +12,7 @@ export const Order = () => {
 			<div className={styles.order_summ}>
 				<p>Total</p>
 				<div>
-					{summ}
+					{totalSumm}
 					<span>&#x24;</span>
 				</div>
 			</div>

@@ -16,9 +16,9 @@ export { Sale } from './Sale/Sale';
 
 export { ProductsList } from './ProductsList/ProductsList';
 export { ProductItem } from './ProductItem/ProductItem';
+export { ProductPrice } from './ProductPrice/ProductPrice';
 
 export { Filter } from './Filter/Filter';
-export { ProductInfo } from './ProductInfo/ProductInfo';
 
 export { CartList } from './CartList/CartList';
 export { CartItem } from './CartItem/CartItem';
