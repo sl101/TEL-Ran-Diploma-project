@@ -1,9 +1,9 @@
 .categories_list {
 	margin: 80px 0 40px;
 	display: grid;
-	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fit, 318px);
 	justify-items: center;
 	justify-content: center;
-	grid-column-gap: 20px;
+	grid-column-gap: 35px;
 	grid-row-gap: 55px;
 }

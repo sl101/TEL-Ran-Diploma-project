@@ -1,12 +1,12 @@
 const GET_PRODUCT = '[PRODUCT] GET_PRODUCT';
 
-export const productInfoReducer = (state = [], action) => {
+export const productInfoReducer = (state = {}, action) => {
 	switch (action.type) {
 		case GET_PRODUCT:
 			if (!action.payload || action.payload.status === 'ERR') {
-				return ['*'];
+				return { status: '*' };
 			} else {
-				return [...action.payload];
+				return { ...action.payload[0] };
 			}
 
 		default:

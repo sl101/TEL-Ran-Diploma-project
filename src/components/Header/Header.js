@@ -6,8 +6,10 @@ import { Burger, Button, Navigation } from '../';
 import { NavLink } from 'react-router-dom';
 import { useState } from 'react';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
+import { useSelector } from 'react-redux';
 
 export const Header = () => {
+	const totalAmount = useSelector((store) => store.cart.totalAmount);
 	const [active, setActive] = useState('');
 	const toggleActive = () => {
 		setActive(active === 'active' ? '' : 'active');
@@ -35,16 +37,14 @@ export const Header = () => {
 					</HashLink>
 
 					<div className={`${styles.menu} ${styles[active]}`}>
-						<HashLink
+						<NavLink
+							to="/categories"
 							className={styles.btn_wrapper}
-							smooth
-							to="/#catalog"
-							onClick={toggleActive}
 							tabIndex="-1"
-							scroll={(el) => scrollWithOffset(el)}
+							onClick={toggleActive}
 						>
 							<Button text="Catalog" content="header_btn" />
-						</HashLink>
+						</NavLink>
 
 						<Navigation onClick={toggleActive} />
 
@@ -54,6 +54,7 @@ export const Header = () => {
 							onClick={toggleActive}
 						>
 							<HiOutlineShoppingBag />
+							<p className={styles.cart_total}>{totalAmount}</p>
 						</NavLink>
 					</div>
 					<Burger onClick={toggleActive} active={active} />

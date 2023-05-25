@@ -20,7 +20,7 @@ export const ProductPrice = ({ price, discont_price, content }) => {
 			{discont && (
 				<>
 					<p className={styles.old_price}>{price}&#x24;</p>
-					<p className={styles.discount}>-{discont}%</p>
+					<p className={`${styles.discont} ${styles[content]}`}>-{discont}%</p>
 				</>
 			)}
 		</div>

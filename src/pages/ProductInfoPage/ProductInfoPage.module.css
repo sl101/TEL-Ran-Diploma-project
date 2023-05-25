@@ -17,12 +17,15 @@
 	max-width: 710px;
 	width: 100%;
 	min-height: 710px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 .info_image img {
 	width: inherit;
 	height: 100%;
-	object-fit: cover;
+	object-fit: contain;
 }
 
 .info_content {
