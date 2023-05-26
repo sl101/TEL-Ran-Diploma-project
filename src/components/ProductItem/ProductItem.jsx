@@ -16,15 +16,9 @@ export const ProductItem = (props) => {
 		dispatch(addToCartAction(props));
 	};
 
-	// const handleLink = (e) => {
-	// e.preventDefault();
-	// console.log('Click');
-	// };
-
 	return (
 		<li className={styles.product_item}>
 			<NavLink to={`/products/${id}`}>
-				{/* <NavLink to={`/products/${id}`} onClick={handleLink}> */}
 				<div className={styles.img_wrapper}>
 					<img src={`${base_url}${image}`} alt={title} />
 					<Button
