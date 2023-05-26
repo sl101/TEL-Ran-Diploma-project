@@ -46,7 +46,6 @@ export const Filter = ({ content }) => {
 		}
 	};
 
-	const handleDiscont = () => {};
 	const handleSelect = () => {};
 	return (
 		<div className={styles.filter_wrapper}>

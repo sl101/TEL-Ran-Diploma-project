@@ -4,6 +4,7 @@
 	font-size: 20px;
 
 	display: flex;
+	flex-wrap: wrap;
 	align-items: center;
 	gap: 40px;
 }
@@ -76,6 +77,15 @@
 	.select_wrapper:hover svg {
 		border-color: var(--ui-color);
 		color: var(--ui-color);
+	}
+
+}
+
+
+@media (max-width: 1100px) {
+
+	.select_filter {
+		margin-left: 0px;
 	}
 
 }
