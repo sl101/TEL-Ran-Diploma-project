@@ -14,7 +14,6 @@ export const ProductInfoPage = () => {
 	const navigate = useNavigate();
 
 	const productInfo = useSelector((store) => store.productInfo);
-	console.log('ProductsList: ', productInfo);
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);

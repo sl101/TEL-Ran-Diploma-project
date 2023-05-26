@@ -30,13 +30,17 @@
 	font-size: 16px;
 
 	color: var(--3a-color);
+	transition: color var(--hover-time) ease;
+
 }
 
 @media (min-width: 762px) {
 
 	.product_item:focus {}
 
-	.product_item:hover .img_wrapper img {}
+	.product_item:hover .product_title {
+		color: var(--ui-color);
+	}
 
 
 	.product_item:hover .img_wrapper button {

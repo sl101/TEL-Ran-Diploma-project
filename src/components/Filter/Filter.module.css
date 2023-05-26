@@ -1,0 +1,81 @@
+.filter_wrapper {
+	padding: 80px 0 20px;
+	font-weight: 600;
+	font-size: 20px;
+
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.price_filter {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+
+.price_filter input {}
+
+
+.discont_filter {
+
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.select_filter {
+	margin-left: 50px;
+
+	display: flex;
+	align-items: center;
+	gap: 40px;
+}
+
+.select_wrapper {
+	position: relative;
+	height: 40px;
+
+	font-size: 16px;
+	letter-spacing: 2px;
+
+	border: 1px solid var(--black-color);
+	border-radius: 7px;
+
+	color: var(--ac-color);
+	transition: border-color var(--hover-time) ease;
+
+}
+
+.select_icon {
+	position: absolute;
+	z-index: 10;
+	width: 20px;
+	height: 40px;
+	color: var(--ac-color);
+	top: -2px;
+	right: 10px;
+	transition: color var(--hover-time) ease;
+}
+
+.select_wrapper select {
+	position: relative;
+	z-index: 20;
+	padding: 8px 40px 8px 10px;
+	background-color: transparent;
+	border: none;
+	outline: none;
+	appearance: none;
+	cursor: pointer;
+}
+
+
+@media (min-width: 762px) {
+
+	.select_wrapper:hover,
+	.select_wrapper:hover svg {
+		border-color: var(--ui-color);
+		color: var(--ui-color);
+	}
+
+}
