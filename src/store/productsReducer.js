@@ -1,7 +1,9 @@
 const ADD_PRODUCTS_LIST = '[PRODUCTS] ADD_PRODUCTS_LIST';
 const FILTER_BY_PRICE_RANGE = '[PRODUCTS] FILTER_BY_PRICE_RANGE';
 const FILTER_BY_DISCONT = '[PRODUCTS] FILTER_BY_DISCONT';
-const SORT_BY_PRICE = '[PRODUCTS] SORT_BY_PRICE';
+const SORT_BY_ID = '[PRODUCTS] SORT_BY_ID';
+const SORT_PRICE_BY_DESC = '[PRODUCTS] SORT_PRICE_BY_DESC';
+const SORT_PRICE_BY_ASC = '[PRODUCTS] SORT_PRICE_BY_ASC';
 const SORT_BY_NAME = '[PRODUCTS] SORT_BY_NAME';
 
 export const productsReducer = (state = [], action) => {
@@ -32,6 +34,33 @@ export const productsReducer = (state = [], action) => {
 					: product.discont_price ?? true,
 			}));
 
+		case SORT_BY_ID:
+			const tempList = [...state];
+			return tempList.sort((a, b) => a.id - b.id);
+		case SORT_PRICE_BY_DESC:
+			const ascList = [...state];
+			return ascList.sort((a, b) => {
+				const tempA = a.price || a.discont_price;
+				const tempB = b.price || b.discont_price;
+				return tempA === tempB ? 0 : tempA > tempB ? -1 : 1;
+			});
+
+		case SORT_PRICE_BY_ASC:
+			const descList = [...state];
+			return descList.sort((a, b) => {
+				const priceA = a.price || a.discont_price;
+				const priceB = b.price || b.discont_price;
+				return priceA === priceB ? 0 : priceA > priceB ? 1 : -1;
+			});
+
+		case SORT_BY_NAME:
+			const namedList = [...state];
+			return namedList.sort((a, b) => {
+				const titleA = a.title.toUpperCase();
+				const titleB = b.title.toUpperCase();
+				return titleA === titleB ? 0 : titleA > titleB ? 1 : -1;
+			});
+
 		default:
 			return state;
 	}
@@ -52,12 +81,16 @@ export const filterProductsByDiscontAction = (payload) => ({
 	payload,
 });
 
-export const sortProductsByPriceAction = (payload) => ({
-	type: SORT_BY_PRICE,
-	payload,
+export const sortProductsByIdAction = () => ({
+	type: SORT_BY_ID,
+});
+export const sortPriceByDescAction = () => ({
+	type: SORT_PRICE_BY_DESC,
+});
+export const sortPriceByAscAction = () => ({
+	type: SORT_PRICE_BY_ASC,
 });
 
-export const sortProductsByNameAction = (payload) => ({
+export const sortProductsByNameAction = () => ({
 	type: SORT_BY_NAME,
-	payload,
 });
