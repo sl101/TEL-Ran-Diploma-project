@@ -1,14 +1,15 @@
 import { NavLink } from 'react-router-dom';
 import styles from './Navigation.module.css';
+import { HashLink } from 'react-router-hash-link';
 
 export const Navigation = ({ ...other }) => {
 	return (
 		<nav className={styles.nav}>
 			<ul className={styles.nav_list}>
 				<li className={styles.nav_item}>
-					<NavLink className={styles.nav_link} to="/" {...other}>
+					<HashLink className={styles.nav_link} smooth to="/#header" {...other}>
 						Main Page
-					</NavLink>
+					</HashLink>
 				</li>
 				<li>
 					<NavLink

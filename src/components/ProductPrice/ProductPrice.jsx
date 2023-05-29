@@ -5,14 +5,7 @@ export const ProductPrice = ({ price, discont_price, content }) => {
 		discont_price && Math.round(((price - discont_price) * 100) / price);
 
 	return (
-		<div
-			className={`${styles.price_wrapper} ${styles[content]}`}
-			style={
-				discont && {
-					justifyContent: 'space-between',
-				}
-			}
-		>
+		<div className={`${styles.price_wrapper} ${styles[content]}`}>
 			<p className={`${styles.price} ${styles[content]}`}>
 				{discont ? discont_price : price}
 				<span>&#x24;</span>

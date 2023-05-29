@@ -15,12 +15,6 @@ export const Header = () => {
 		setActive(active === 'active' ? '' : 'active');
 	};
 
-	const scrollWithOffset = (el) => {
-		const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-		const yOffset = window.innerWidth < 762 ? -98 : 0;
-		window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
-	};
-
 	return (
 		<header id="header" className={styles.header}>
 			<div className="container">

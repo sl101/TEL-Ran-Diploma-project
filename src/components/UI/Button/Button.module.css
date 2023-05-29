@@ -135,8 +135,18 @@
 	}
 }
 
+
+@media (max-width: 1400px) {
+	.button.info {
+		margin: 20px auto 0;
+		display: block;
+	}
+}
+
 @media (max-width: 762px) {
 	.button.sale {
 		max-width: 100%;
 	}
+
+
 }

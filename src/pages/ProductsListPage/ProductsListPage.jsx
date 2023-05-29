@@ -12,40 +12,39 @@ export const ProductsListPage = () => {
 	const { id } = useParams();
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
-	const show_quantity = 8;
 
 	let products = useSelector((store) => store.products);
 	let category = useSelector((store) => store.category);
 
-	const getRandomProducts = useCallback(
-		(quantity) =>
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, [state]);
+
+	const getProducts = useCallback(
+		() =>
 			products
-				? products
-						.sort(() => Math.random() - 0.5) // убрать если будет пагинация
-						.filter((product) => product.rangeVisible && product.discontVisible)
-						.slice(0, quantity)
+				? products.filter(
+						(product) => product.rangeVisible && product.discontVisible
+				  )
 				: [],
 		[products]
 	);
 
 	const getSaleProducts = useCallback(
-		(quantity) =>
+		() =>
 			products
 				? products
 						.filter((product) => product.discont_price)
-						.sort(() => Math.random() - 0.5) // убрать если будет пагинация
 						.filter((product) => product.rangeVisible)
-						.slice(0, quantity)
 				: [],
 		[products]
 	);
 
 	const getCategoryProducts = useCallback(
-		(quantity) =>
-			category.data
-				?.sort(() => Math.random() - 0.5) // убрать если будет пагинация
-				.filter((product) => product.rangeVisible && product.discontVisible)
-				.slice(0, quantity),
+		() =>
+			category.data?.filter(
+				(product) => product.rangeVisible && product.discontVisible
+			),
 		[category.data]
 	);
 
@@ -54,10 +53,6 @@ export const ProductsListPage = () => {
 			navigate('/*');
 		}
 	}, [state, navigate]);
-
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
 
 	useEffect(() => {
 		if (state === 'category') {
@@ -70,28 +65,30 @@ export const ProductsListPage = () => {
 	let dataMap = {
 		all: {
 			title: 'All products',
-			getData: () => getRandomProducts(show_quantity),
+			getData: () => getProducts(),
 		},
 		sale: {
 			title: 'Products with sale',
-			getData: () => getSaleProducts(show_quantity),
+			getData: () => getSaleProducts(),
 		},
 		category: {
 			title: category.data ? category.category.title : '',
-			getData: () => getCategoryProducts(show_quantity),
+			getData: () => getCategoryProducts(),
 		},
 	};
 
 	const { title, getData } = dataMap[state] || [];
 	const targetData = dataMap[state] && getData();
 
-	// console.log('ProductsListPage: ', targetData);
+	console.log('ProductsListPage targetData: ', products);
+	console.log('ProductsListPage products.length: ', targetData?.length);
 	return (
 		<section className={styles.products_page}>
 			<div className="container">
 				<h1 className="title">{title}</h1>
 				<Filter content={state} />
 				<ProductsList
+					quantity={8}
 					pageState={state}
 					products={targetData?.filter((el) => el.rangeVisible)}
 				/>

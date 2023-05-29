@@ -1,22 +1,36 @@
 import styles from './Filter.module.css';
 import { Input } from '../';
 import { SlArrowDown } from 'react-icons/sl';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import {
 	filterProductsByDiscontAction,
 	filterProductsByPriceRangeAction,
+	sortPriceByAscAction,
+	sortPriceByDescAction,
+	sortProductsByIdAction,
+	sortProductsByNameAction,
 } from '../../store/productsReducer';
 import {
 	filterCategoryProductsByDiscontAction,
 	filterCategoryProductsByPriceAction,
+	sortCategoryProductsByIdAction,
+	sortCategoryProductsByNameAction,
+	sortCategoryProductsPriceByAscAction,
+	sortCategoryProductsPriceByDescAction,
 } from '../../store/categoryReducer';
 
 export const Filter = ({ content }) => {
-	const [{ from = '', to = '' }, setRange] = useState({});
+	const refFrom = useRef();
+	const refTo = useRef();
+	const refDiscont = useRef();
+	const refSelect = useRef();
 
 	useEffect(() => {
-		setRange({ from: '', to: '' });
+		refFrom.current.value = '';
+		refTo.current.value = '';
+		refSelect.current.value = 'default';
+		if (content !== 'sale') refDiscont.current.checked = false;
 	}, [content]);
 
 	const dispatch = useDispatch();
@@ -25,37 +39,72 @@ export const Filter = ({ content }) => {
 		e.preventDefault();
 
 		const targetInput = e.target.name;
-		const newValue = e.target.value.replace(',', '.');
+		const newValue = e.target.value;
 
-		if (!isNaN(newValue)) {
-			setRange((prevRange) => ({
-				...prevRange,
-				[targetInput]: newValue,
-			}));
+		const range = {
+			from: targetInput === 'from' ? newValue : refFrom.current.value || 0,
+			to: targetInput === 'to' ? newValue : refTo.current.value || Infinity,
+		};
 
-			const rangeStore = {
-				from: targetInput === 'from' ? newValue : from || -Infinity,
-				to: targetInput === 'to' ? newValue : to || Infinity,
-			};
-
-			dispatch(
-				content === 'category'
-					? filterCategoryProductsByPriceAction(rangeStore)
-					: filterProductsByPriceRangeAction(rangeStore)
-			);
-		}
+		dispatch(
+			content === 'category'
+				? filterCategoryProductsByPriceAction(range)
+				: filterProductsByPriceRangeAction(range)
+		);
 	};
 
-	const handleDiscont = () => {};
-	const handleSelect = () => {};
+	const handleDiscont = (e) => {
+		dispatch(
+			content === 'category'
+				? filterCategoryProductsByDiscontAction(e.target.checked)
+				: filterProductsByDiscontAction(e.target.checked)
+		);
+	};
+
+	const handleSelect = (e) => {
+		switch (e.target.value) {
+			case 'default':
+				dispatch(
+					content === 'category'
+						? sortCategoryProductsByIdAction()
+						: sortProductsByIdAction()
+				);
+				break;
+			case 'priceAsc':
+				dispatch(
+					content === 'category'
+						? sortCategoryProductsPriceByDescAction()
+						: sortPriceByAscAction()
+				);
+				break;
+			case 'priceDesc':
+				dispatch(
+					content === 'category'
+						? sortCategoryProductsPriceByAscAction()
+						: sortPriceByDescAction()
+				);
+				break;
+			case 'name':
+				dispatch(
+					content === 'category'
+						? sortCategoryProductsByNameAction()
+						: sortProductsByNameAction()
+				);
+				break;
+			default:
+				break;
+		}
+	};
 	return (
 		<div className={styles.filter_wrapper}>
 			<div className={styles.price_filter}>
 				<span>Price</span>
 				<Input
 					name="from"
-					type="text"
-					value={from || ''}
+					type="number"
+					step=".1"
+					min="0"
+					ref={refFrom}
 					placeholder="from"
 					content="filter"
 					onChange={handlePrice}
@@ -63,8 +112,10 @@ export const Filter = ({ content }) => {
 
 				<Input
 					name="to"
-					type="text"
-					value={to || ''}
+					type="number"
+					step=".1"
+					min="0"
+					ref={refTo}
 					placeholder="to"
 					content="filter"
 					onChange={handlePrice}
@@ -73,36 +124,31 @@ export const Filter = ({ content }) => {
 			{content !== 'sale' && (
 				<div className={styles.discont_filter}>
 					<span>Discounted items</span>
-					<Input
+
+					<input
+						id="input"
+						className={styles.discont}
+						ref={refDiscont}
 						name="discont"
 						type="checkbox"
-						content="filter"
-						onClick={(e) =>
-							dispatch(
-								content === 'category'
-									? filterCategoryProductsByDiscontAction(e.target.checked)
-									: filterProductsByDiscontAction(e.target.checked)
-							)
-						}
-						style={{
-							width: '40px',
-						}}
+						content="discont"
+						onClick={handleDiscont}
 					/>
+					<label for="input" className={styles.checkbox_label} />
 				</div>
 			)}
 			<div className={styles.select_filter}>
 				<span>Sorted</span>
 				<div className={styles.select_wrapper}>
 					<select
-						value="default"
-						name="sort"
-						placeholder="dy default"
+						className={styles.select}
 						onChange={handleSelect}
+						ref={refSelect}
 					>
-						<option value="by price low first">by price / low first</option>
-						<option value="by price hie first">by price / high first</option>
-						<option value="by title low first">by title / low first</option>
-						<option value="by title hie first">by title / high first</option>
+						<option value="default">by default</option>
+						<option value="priceAsc">price by ascending</option>
+						<option value="priceDesc">price by descending</option>
+						<option value="name">by product title</option>
 					</select>
 					<SlArrowDown className={styles.select_icon} />
 				</div>
