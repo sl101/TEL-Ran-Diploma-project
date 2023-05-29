@@ -7,3 +7,10 @@
 	grid-column-gap: 35px;
 	grid-row-gap: 55px;
 }
+
+@media (max-width: 762px) {
+	.categories_list {
+		margin: 50px 0 40px;
+
+	}
+}

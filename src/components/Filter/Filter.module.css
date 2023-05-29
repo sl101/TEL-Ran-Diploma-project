@@ -162,6 +162,11 @@
 
 	.select_filter {
 		margin-left: 0px;
+		gap: 30px;
+	}
+
+	.select {
+		padding: 8px 20px 8px 10px;
 	}
 
 }

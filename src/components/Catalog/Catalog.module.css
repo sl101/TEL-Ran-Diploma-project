@@ -21,3 +21,15 @@
 
 	border: 1px solid var(--black-color);
 }
+
+@media (max-width: 762px) {
+	.catalog {
+		padding: 40px 0 40px;
+	}
+
+	.catalog_top {
+		margin-bottom: 0;
+		flex-direction: column;
+		gap: 50px;
+	}
+}
