@@ -80,8 +80,8 @@ export const ProductsListPage = () => {
 	const { title, getData } = dataMap[state] || [];
 	const targetData = dataMap[state] && getData();
 
-	console.log('ProductsListPage targetData: ', products);
-	console.log('ProductsListPage products.length: ', targetData?.length);
+	// console.log('ProductsListPage targetData: ', products);
+	// console.log('ProductsListPage products.length: ', targetData?.length);
 	return (
 		<section className={styles.products_page}>
 			<div className="container">

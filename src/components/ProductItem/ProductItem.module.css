@@ -36,18 +36,19 @@
 
 @media (min-width: 762px) {
 
-	.product_item:focus {}
-
 	.product_item:hover .product_title {
 		color: var(--ui-color);
 	}
-
 
 	.product_item:hover .img_wrapper button {
 		position: absolute;
 		top: 65%;
 	}
+}
 
-	.product_item:active {}
-
+@media (max-width: 762px) {
+	.product_item .img_wrapper button {
+		position: absolute;
+		top: 65%;
+	}
 }
