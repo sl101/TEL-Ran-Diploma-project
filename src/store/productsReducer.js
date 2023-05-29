@@ -40,16 +40,16 @@ export const productsReducer = (state = [], action) => {
 		case SORT_PRICE_BY_DESC:
 			const ascList = [...state];
 			return ascList.sort((a, b) => {
-				const tempA = a.price || a.discont_price;
-				const tempB = b.price || b.discont_price;
+				const tempA = a.discont_price || a.price;
+				const tempB = b.discont_price || b.price;
 				return tempA === tempB ? 0 : tempA > tempB ? -1 : 1;
 			});
 
 		case SORT_PRICE_BY_ASC:
 			const descList = [...state];
 			return descList.sort((a, b) => {
-				const priceA = a.price || a.discont_price;
-				const priceB = b.price || b.discont_price;
+				const priceA = a.discont_price || a.price;
+				const priceB = b.discont_price || b.price;
 				return priceA === priceB ? 0 : priceA > priceB ? 1 : -1;
 			});
 
