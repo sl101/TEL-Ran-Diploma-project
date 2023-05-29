@@ -46,11 +46,9 @@ export const categoryReducer = (state = {}, action) => {
 			};
 
 		case SORT_BY_ID:
-			// const tempList = [...state];
 			return { ...state, data: state.data.sort((a, b) => a.id - b.id) };
 
 		case SORT_PRICE_BY_DESC:
-			// const ascList = [...state];
 			return {
 				...state,
 				data: state.data.sort((a, b) => {
@@ -61,7 +59,6 @@ export const categoryReducer = (state = {}, action) => {
 			};
 
 		case SORT_PRICE_BY_ASC:
-			// const descList = [...state];
 			return {
 				...state,
 				data: state.data.sort((a, b) => {
@@ -72,7 +69,6 @@ export const categoryReducer = (state = {}, action) => {
 			};
 
 		case SORT_BY_NAME:
-			// const namedList = [...state];
 			return {
 				...state,
 				data: state.data.sort((a, b) => {

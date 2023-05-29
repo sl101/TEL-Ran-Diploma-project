@@ -134,7 +134,7 @@ export const Filter = ({ content }) => {
 						content="discont"
 						onClick={handleDiscont}
 					/>
-					<label for="input" className={styles.checkbox_label} />
+					<label htmlFor="input" className={styles.checkbox_label} />
 				</div>
 			)}
 			<div className={styles.select_filter}>
