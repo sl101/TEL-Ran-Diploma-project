@@ -1,9 +1,15 @@
+import { useRef, useState } from 'react';
 import { Button, Input } from '../';
 import styles from './Order.module.css';
+import { CSSTransition } from 'react-transition-group';
+import { Alert } from '../Alert/Alert';
 
 export const Order = ({ totalSumm }) => {
+	const [showMessage, setShowMessage] = useState(false);
+	const nodeRef = useRef(null);
 	const submit = (e) => {
 		e.preventDefault();
+		setShowMessage(true);
 	};
 
 	return (
@@ -20,6 +26,25 @@ export const Order = ({ totalSumm }) => {
 				<Input content="order" placeholder="Phone number" />
 				<Button content="order" text="Order" />
 			</form>
+			<CSSTransition
+				in={showMessage}
+				nodeRef={nodeRef}
+				timeout={300}
+				classNames="alert"
+				unmountOnExit
+				// onEnter={() => setShowButton(false)}
+				// onExited={() => setShowButton(true)}
+			>
+				<Alert
+					ref={nodeRef}
+					text="Send"
+					content="order"
+					// variant="primary"
+					// dismissible
+					message="Finish order and clean cart"
+					setShowMessage={setShowMessage}
+				/>
+			</CSSTransition>
 		</div>
 	);
 };

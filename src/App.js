@@ -14,17 +14,6 @@ import {
 import { useEffect } from 'react';
 
 function App() {
-	// const navigate = useNavigate();
-
-	// let count = 0;
-	// useEffect(() => {
-	// 	do {
-	// 		navigate('/');
-	// 		count += 1;
-	// 	} while (count < 1);
-	// }, []);
-
-	// console.log(count);
 	return (
 		<>
 			<Routes>
