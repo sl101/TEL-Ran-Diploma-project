@@ -8,8 +8,8 @@ export const NotFoundPage = () => {
 	const location = useLocation();
 	useEffect(() => {
 		window.scrollTo(0, 0);
-		console.log(location);
-		if (location === 'https://sl101.github.io/TEL-Ran-Diploma-project/') {
+		console.log(location.pathname);
+		if (location.pathname === '/TEL-Ran-Diploma-project/') {
 			navigate('/');
 		}
 	}, []);
