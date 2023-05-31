@@ -1,5 +1,5 @@
 import styles from './Head.module.css';
-import flowers from '../../media/images/main_flowers.png';
+// import flowers from '../../media/images/main_flowers.png';
 import { HashLink } from 'react-router-hash-link';
 
 export const Head = () => {

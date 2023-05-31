@@ -1,8 +1,7 @@
-import { render } from 'react-dom';
-
 const ADD_TO_CART = '[CART] ADD_TO_CART';
 const DECR_CART_PRODUCT = '[CART] DECR_CART_PRODUCT';
 const REMOVE_CART_PRODUCT = '[CART] REMOVE_CART_PRODUCT';
+const CLEAN_CART = '[CART] CLEAN_CART';
 
 const defaultState = {
 	cartList: [],
@@ -57,6 +56,9 @@ export const cartReducer = (state = defaultState, action) => {
 				totalSumm: +targetSumm.toFixed(2),
 			};
 
+		case CLEAN_CART:
+			return defaultState;
+
 		default:
 			return state;
 	}
@@ -75,4 +77,7 @@ export const decrCartProductAction = (payload) => ({
 export const removeCartProductAction = (payload) => ({
 	type: REMOVE_CART_PRODUCT,
 	payload,
+});
+export const cleanCartAction = () => ({
+	type: CLEAN_CART,
 });
