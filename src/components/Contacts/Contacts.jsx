@@ -2,21 +2,36 @@ import styles from './Contacts.module.css';
 import { SlSocialInstagram } from 'react-icons/sl';
 import { SiWhatsapp } from 'react-icons/si';
 import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export const Contacts = () => {
 	return (
 		<section className={styles.contacts}>
 			<div className={styles.links}>
 				<h2 className="title">Contacts</h2>
-				<p className={styles.phone}>+49 999 999 99 99</p>
+				<Link className={styles.phone} to="tel:+49 999 999 99 99">
+					+49 999 999 99 99
+				</Link>
 				<ul className={styles.media_list}>
-					<li className={styles.media_item}>
-						<SlSocialInstagram />
-						<p>instagram</p>
+					<li>
+						<Link
+							className={styles.media_item}
+							to="https://www.linkedin.com/school/tel-ran-de/"
+							target="_blank"
+						>
+							<SlSocialInstagram />
+							<p>instagram</p>
+						</Link>
 					</li>
-					<li className={styles.media_item}>
-						<SiWhatsapp />
-						<p>WhatsApp</p>
+					<li>
+						<Link
+							className={styles.media_item}
+							to="https://wa.me/+499999999999"
+							target="_blank"
+						>
+							<SiWhatsapp />
+							<p>WhatsApp</p>
+						</Link>
 					</li>
 				</ul>
 			</div>
