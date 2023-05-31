@@ -7,6 +7,7 @@ import { Alert } from '../Alert/Alert';
 export const Order = ({ totalSumm }) => {
 	const [showMessage, setShowMessage] = useState(false);
 	const nodeRef = useRef(null);
+
 	const submit = (e) => {
 		e.preventDefault();
 		setShowMessage(true);
@@ -32,15 +33,11 @@ export const Order = ({ totalSumm }) => {
 				timeout={300}
 				classNames="alert"
 				unmountOnExit
-				// onEnter={() => setShowButton(false)}
-				// onExited={() => setShowButton(true)}
 			>
 				<Alert
 					ref={nodeRef}
 					text="Send"
 					content="order"
-					// variant="primary"
-					// dismissible
 					message="Finish order and clean cart"
 					setShowMessage={setShowMessage}
 				/>

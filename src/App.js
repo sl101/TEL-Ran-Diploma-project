@@ -1,4 +1,4 @@
-import { Route, Routes, useNavigate } from 'react-router-dom';
+import { Route, Routes } from 'react-router-dom';
 import './fonts/fonts.css';
 import './reset.css';
 import './App.css';
@@ -11,7 +11,6 @@ import {
 	ProductsListPage,
 	ShopingCartPage,
 } from './pages';
-import { useEffect } from 'react';
 
 function App() {
 	return (

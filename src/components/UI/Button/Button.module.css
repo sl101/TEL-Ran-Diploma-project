@@ -20,7 +20,7 @@
 	padding: 12px 28px;
 }
 
-.button.sale {
+.button.sale_ofer {
 	max-width: 475px;
 	width: 100%;
 	height: 75px;
@@ -67,6 +67,7 @@
 	transition: box-shadow var(--hover-time) ease, background-color var(--hover-time) ease, border-color var(--hover-time) ease, top var(--hover-time) ease;
 }
 
+.button.sale,
 .button.order {
 	max-width: 446px;
 	width: 100%;
@@ -144,7 +145,7 @@
 }
 
 @media (max-width: 762px) {
-	.button.sale {
+	.button.sale_ofer {
 		max-width: 100%;
 	}
 

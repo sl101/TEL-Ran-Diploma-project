@@ -11,14 +11,6 @@ import {
 	sortProductsByIdAction,
 	sortProductsByNameAction,
 } from '../../store/productsReducer';
-import {
-	filterCategoryProductsByDiscontAction,
-	filterCategoryProductsByPriceAction,
-	sortCategoryProductsByIdAction,
-	sortCategoryProductsByNameAction,
-	sortCategoryProductsPriceByAscAction,
-	sortCategoryProductsPriceByDescAction,
-} from '../../store/categoryReducer';
 
 export const Filter = ({ content }) => {
 	const refFrom = useRef();
@@ -39,57 +31,37 @@ export const Filter = ({ content }) => {
 		e.preventDefault();
 
 		const targetInput = e.target.name;
-		const newValue = e.target.value;
+		let newValue = e.target.value;
 
 		const range = {
-			from: targetInput === 'from' ? newValue : refFrom.current.value || 0,
-			to: targetInput === 'to' ? newValue : refTo.current.value || Infinity,
+			from: targetInput === 'from' ? newValue || 0 : refFrom.current.value || 0,
+			to:
+				targetInput === 'to'
+					? newValue || Infinity
+					: refTo.current.value || Infinity,
 		};
+		console.log(range);
 
-		dispatch(
-			content === 'category'
-				? filterCategoryProductsByPriceAction(range)
-				: filterProductsByPriceRangeAction(range)
-		);
+		dispatch(filterProductsByPriceRangeAction(range));
 	};
 
 	const handleDiscont = (e) => {
-		dispatch(
-			content === 'category'
-				? filterCategoryProductsByDiscontAction(e.target.checked)
-				: filterProductsByDiscontAction(e.target.checked)
-		);
+		dispatch(filterProductsByDiscontAction(e.target.checked));
 	};
 
 	const handleSelect = (e) => {
 		switch (e.target.value) {
 			case 'default':
-				dispatch(
-					content === 'category'
-						? sortCategoryProductsByIdAction()
-						: sortProductsByIdAction()
-				);
+				dispatch(sortProductsByIdAction());
 				break;
 			case 'priceAsc':
-				dispatch(
-					content === 'category'
-						? sortCategoryProductsPriceByDescAction()
-						: sortPriceByAscAction()
-				);
+				dispatch(sortPriceByAscAction());
 				break;
 			case 'priceDesc':
-				dispatch(
-					content === 'category'
-						? sortCategoryProductsPriceByAscAction()
-						: sortPriceByDescAction()
-				);
+				dispatch(sortPriceByDescAction());
 				break;
 			case 'name':
-				dispatch(
-					content === 'category'
-						? sortCategoryProductsByNameAction()
-						: sortProductsByNameAction()
-				);
+				dispatch(sortProductsByNameAction());
 				break;
 			default:
 				break;

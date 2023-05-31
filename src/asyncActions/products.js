@@ -1,12 +1,28 @@
 import { getProductInfoAction } from '../store/productInfoReducer';
-import { addProductsListAction } from '../store/productsReducer';
+import {
+	addProductsListAction,
+	addProductsListWhithSaleAction,
+} from '../store/productsReducer';
 import { base_url } from './url';
 
-export const fetchProductsList = (products_all) => {
+export const fetchCategoryListById = (id) => {
 	return function (dispatch) {
-		fetch(base_url + products_all)
+		fetch(`${base_url}/categories/${id}`)
 			.then((res) => res.json())
 			.then((data) => dispatch(addProductsListAction(data)));
+	};
+};
+
+export const fetchAllProductsList = (type) => {
+	return function (dispatch) {
+		fetch(`${base_url}/products/all`)
+			.then((res) => res.json())
+			.then((data) => {
+				dispatch(addProductsListAction({ data, category: {} }));
+				if (type === 'sale') {
+					dispatch(addProductsListWhithSaleAction());
+				}
+			});
 	};
 };
 
