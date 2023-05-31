@@ -9,7 +9,10 @@ export const NotFoundPage = () => {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 		console.log(location.pathname);
-		if (location.pathname === '/TEL-Ran-Diploma-project/') {
+		if (
+			location.pathname === '/TEL-Ran-Diploma-project/' ||
+			location.pathname === '/TEL-Ran-Diploma-project'
+		) {
 			navigate('/');
 		}
 	}, []);
