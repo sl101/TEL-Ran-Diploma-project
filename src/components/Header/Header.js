@@ -4,13 +4,26 @@ import { HashLink } from 'react-router-hash-link';
 
 import { Burger, Button, Navigation } from '../';
 import { NavLink } from 'react-router-dom';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { useSelector } from 'react-redux';
 
 export const Header = () => {
 	const totalAmount = useSelector((store) => store.cart.totalAmount);
 	const [active, setActive] = useState('');
+
+	useEffect(() => {
+		if (active) {
+			const scrollbarWidth =
+				window.innerWidth - document.documentElement.clientWidth;
+			document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
+			document.body.style.overflow = 'hidden';
+		} else {
+			document.documentElement.style.paddingRight = '';
+			document.body.style.overflow = 'auto';
+		}
+	}, [active]);
+
 	const toggleActive = () => {
 		setActive(active === 'active' ? '' : 'active');
 	};
