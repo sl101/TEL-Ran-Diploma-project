@@ -13,7 +13,7 @@ export const Header = () => {
 	const [active, setActive] = useState('');
 
 	useEffect(() => {
-		if (active) {
+		if (active && window.innerWidth <= 762) {
 			const scrollbarWidth =
 				window.innerWidth - document.documentElement.clientWidth;
 			document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
