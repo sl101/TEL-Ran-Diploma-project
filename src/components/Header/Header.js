@@ -27,7 +27,6 @@ export const Header = () => {
 	}, []);
 
 	useEffect(() => {
-
 		const handleScroll = (event) => {
 			if (active) {
 				event.preventDefault();
@@ -38,8 +37,12 @@ export const Header = () => {
 		const options = { passive: false };
 
 		document.addEventListener('wheel', handleScroll, options);
+		document.addEventListener('touchmove', handleScroll, options);
 
-		return () => document.removeEventListener('wheel', handleScroll);
+		return () => {
+			document.removeEventListener('wheel', handleScroll);
+			document.removeEventListener('touchmove', handleScroll);
+		};
 	}, [active]);
 
 	const toggleActive = () => {
