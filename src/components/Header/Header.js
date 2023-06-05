@@ -10,37 +10,40 @@ import { useSelector } from 'react-redux';
 
 export const Header = () => {
 	const totalAmount = useSelector((store) => store.cart.totalAmount);
-	const [active, setActive] = useState('');
+	const [active, setActive] = useState(false);
 
 	useEffect(() => {
-		if (active) {
-			const scrollbarWidth =
-				window.innerWidth - document.documentElement.clientWidth;
-			document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
-			document.body.style.overflow = 'hidden';
-		} else {
-			document.documentElement.style.paddingRight = '';
-			document.body.style.overflow = 'auto';
-		}
-	}, [active]);
-
-	useEffect(() => {
-		// Функция обработчик события изменения размера окна
-		const activeStopBySize = () => {
-			if (window.innerWidth > 762) setActive(false);
+		const handleResize = () => {
+			const windowWidth = window.innerWidth;
+			if (windowWidth > 762) setActive(false);
 		};
 
-		// Добавляем слушатель события изменения размера окна
-		window.addEventListener('resize', activeStopBySize);
+		window.addEventListener('resize', handleResize);
 
-		// Очищаем слушатель события при размонтировании компонента
+		handleResize();
 		return () => {
-			window.removeEventListener('resize', activeStopBySize);
+			window.removeEventListener('resize', handleResize);
 		};
 	}, []);
 
+	useEffect(() => {
+
+		const handleScroll = (event) => {
+			if (active) {
+				event.preventDefault();
+				event.stopPropagation();
+			}
+		};
+
+		const options = { passive: false };
+
+		document.addEventListener('wheel', handleScroll, options);
+
+		return () => document.removeEventListener('wheel', handleScroll);
+	}, [active]);
+
 	const toggleActive = () => {
-		setActive(active === 'active' ? '' : 'active');
+		setActive(!active);
 	};
 
 	return (
@@ -58,28 +61,28 @@ export const Header = () => {
 						</div>
 					</HashLink>
 
-					<div className={`${styles.menu} ${styles[active]}`}>
+					<div className={`${styles.menu} ${styles[active && 'active']}`}>
 						<NavLink
 							to="/categories"
 							className={styles.btn_wrapper}
 							tabIndex="-1"
-							onClick={toggleActive}
+							onClick={() => setActive(false)}
 						>
 							<Button text="Catalog" content="header_btn" />
 						</NavLink>
 
-						<Navigation onClick={toggleActive} />
+						<Navigation onClick={() => setActive(false)} />
 
 						<NavLink
 							className={styles.cart_link}
 							to="/cart"
-							onClick={toggleActive}
+							onClick={() => setActive(false)}
 						>
 							<HiOutlineShoppingBag />
 							<p className={styles.cart_total}>{totalAmount}</p>
 						</NavLink>
 					</div>
-					<Burger onClick={toggleActive} active={active} />
+					<Burger onClick={toggleActive} active={active && 'active'} />
 				</div>
 			</div>
 		</header>

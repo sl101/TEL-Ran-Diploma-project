@@ -11,6 +11,7 @@ export const Alert = forwardRef(
 	({ message, text, content, setShowMessage }, ref) => {
 		const [isExploding, setIsExploding] = useState(false);
 		const dispatch = useDispatch();
+
 		useEffect(() => {
 			const scrollbarWidth =
 				window.innerWidth - document.documentElement.clientWidth;
