@@ -13,7 +13,7 @@ export const Header = () => {
 	const [active, setActive] = useState('');
 
 	useEffect(() => {
-		if (active && window.innerWidth <= 762) {
+		if (active) {
 			const scrollbarWidth =
 				window.innerWidth - document.documentElement.clientWidth;
 			document.documentElement.style.paddingRight = `${scrollbarWidth}px`;
@@ -23,6 +23,21 @@ export const Header = () => {
 			document.body.style.overflow = 'auto';
 		}
 	}, [active]);
+
+	useEffect(() => {
+		// Функция обработчик события изменения размера окна
+		const activeStopBySize = () => {
+			if (window.innerWidth > 762) setActive(false);
+		};
+
+		// Добавляем слушатель события изменения размера окна
+		window.addEventListener('resize', activeStopBySize);
+
+		// Очищаем слушатель события при размонтировании компонента
+		return () => {
+			window.removeEventListener('resize', activeStopBySize);
+		};
+	}, []);
 
 	const toggleActive = () => {
 		setActive(active === 'active' ? '' : 'active');
