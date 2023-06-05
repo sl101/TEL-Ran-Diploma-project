@@ -24,6 +24,21 @@ export const Header = () => {
 		}
 	}, [active]);
 
+	useEffect(() => {
+		// Функция обработчик события изменения размера окна
+		const activeStopBySize = () => {
+			if (window.innerWidth > 762) setActive(false);
+		};
+
+		// Добавляем слушатель события изменения размера окна
+		window.addEventListener('resize', activeStopBySize);
+
+		// Очищаем слушатель события при размонтировании компонента
+		return () => {
+			window.removeEventListener('resize', activeStopBySize);
+		};
+	}, []);
+
 	const toggleActive = () => {
 		setActive(active === 'active' ? '' : 'active');
 	};

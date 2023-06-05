@@ -4,9 +4,13 @@ const REMOVE_CART_PRODUCT = '[CART] REMOVE_CART_PRODUCT';
 const CLEAN_CART = '[CART] CLEAN_CART';
 
 const defaultState = {
-	cartList: [],
+	cartList: JSON.parse(localStorage.getItem('cartList')) || [],
 	totalAmount: 0,
 	totalSumm: 0,
+};
+
+const updateLocalStorage = (cartList) => {
+	localStorage.setItem('cartList', JSON.stringify(cartList));
 };
 
 export const cartReducer = (state = defaultState, action) => {
@@ -16,18 +20,26 @@ export const cartReducer = (state = defaultState, action) => {
 		case ADD_TO_CART:
 			const tempTotalSumm =
 				totalSumm + (action.payload.discont_price || action.payload.price);
+			const tempItemIndex = cartList.findIndex(
+				(el) => action.payload.id === el.id
+			);
+
 			const modifiedList = [...cartList];
-			const tempItem = cartList.find((el) => action.payload.id === el.id);
-			if (tempItem) {
-				tempItem.amount = tempItem.amount + 1;
+			if (tempItemIndex !== -1) {
+				modifiedList[tempItemIndex].amount += 1;
 			} else {
 				modifiedList.unshift({ ...action.payload, amount: 1 });
 			}
-			return {
+
+			const addedState = {
 				cartList: modifiedList,
-				totalAmount: ++totalAmount,
+				totalAmount: totalAmount + 1,
 				totalSumm: +tempTotalSumm.toFixed(2),
 			};
+
+			updateLocalStorage(addedState.cartList);
+
+			return addedState;
 
 		case DECR_CART_PRODUCT:
 			const tempProduct = cartList.find((el) => action.payload === el.id);
@@ -36,11 +48,14 @@ export const cartReducer = (state = defaultState, action) => {
 			const decrTotalSumm =
 				totalSumm - (tempProduct.discont_price || tempProduct.price);
 
-			return {
+			const decrementedState = {
 				cartList: cartList.filter((product) => product.amount !== 0),
 				totalAmount: --totalAmount,
 				totalSumm: +decrTotalSumm.toFixed(2),
 			};
+
+			updateLocalStorage(decrementedState.cartList);
+			return decrementedState;
 
 		case REMOVE_CART_PRODUCT:
 			const tempUnit = cartList.find((el) => action.payload === el.id);
@@ -50,14 +65,24 @@ export const cartReducer = (state = defaultState, action) => {
 				(tempUnit.discont_price || tempUnit.price) * tempUnit.amount;
 
 			tempUnit.amount = 0;
-			return {
+
+			const removedState = {
 				cartList: cartList.filter((product) => product.id !== action.payload),
 				totalAmount: targetAmount,
 				totalSumm: +targetSumm.toFixed(2),
 			};
 
+			updateLocalStorage(removedState.cartList);
+			return removedState;
+
 		case CLEAN_CART:
-			return defaultState;
+			const cleanedState = {
+				cartList: [],
+				totalAmount: 0,
+				totalSumm: 0,
+			};
+			updateLocalStorage(cleanedState.cartList);
+			return cleanedState;
 
 		default:
 			return state;

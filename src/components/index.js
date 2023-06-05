@@ -11,8 +11,9 @@ export { CategoryItem } from './CategoryItem/CategoryItem';
 
 export { Offer } from './Offer/Offer';
 export { Catalog } from './Catalog/Catalog';
-export { DiscountForm } from './DiscountForm/DiscountForm';
 export { Sale } from './Sale/Sale';
+export { PhoneForm } from './PhoneForm/PhoneForm';
+export { Alert } from './Alert/Alert';
 
 export { ProductsList } from './ProductsList/ProductsList';
 export { ProductItem } from './ProductItem/ProductItem';

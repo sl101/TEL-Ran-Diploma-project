@@ -3,15 +3,16 @@ import { Button, Input } from '../';
 import styles from './Order.module.css';
 import { CSSTransition } from 'react-transition-group';
 import { Alert } from '../Alert/Alert';
+import { PhoneForm } from '../';
 
 export const Order = ({ totalSumm }) => {
-	const [showMessage, setShowMessage] = useState(false);
-	const nodeRef = useRef(null);
+	// const [showMessage, setShowMessage] = useState(false);
+	// const nodeRef = useRef(null);
 
-	const submit = (e) => {
-		e.preventDefault();
-		setShowMessage(true);
-	};
+	// const submit = (e) => {
+	// 	e.preventDefault();
+	// 	setShowMessage(true);
+	// };
 
 	return (
 		<div className={styles.order}>
@@ -23,11 +24,20 @@ export const Order = ({ totalSumm }) => {
 					<span>&#x24;</span>
 				</div>
 			</div>
-			<form className={styles.order_form} onSubmit={submit}>
+			<PhoneForm
+				contentInput="order"
+				placeholderInput="+49"
+				contentButton="order"
+				textButton="Order"
+				message="Finish order and clean cart"
+				content="order"
+				alertText="Finish"
+			/>
+			{/* <form className={styles.order_form} onSubmit={submit}>
 				<Input content="order" placeholder="Phone number" />
 				<Button content="order" text="Order" />
-			</form>
-			<CSSTransition
+			</form> */}
+			{/* <CSSTransition
 				in={showMessage}
 				nodeRef={nodeRef}
 				timeout={300}
@@ -41,7 +51,7 @@ export const Order = ({ totalSumm }) => {
 					message="Finish order and clean cart"
 					setShowMessage={setShowMessage}
 				/>
-			</CSSTransition>
+			</CSSTransition> */}
 		</div>
 	);
 };
