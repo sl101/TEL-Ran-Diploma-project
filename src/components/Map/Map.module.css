@@ -1,5 +1,8 @@
 .map_wrapper {
 	width: 100%;
+	border: 1px solid var(--a7-color);
+	border-left: none;
+	border-top: none;
 }
 
 .map_container {
