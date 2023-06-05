@@ -55,7 +55,7 @@ export const Alert = forwardRef(
 								force: 1,
 								duration: 5000,
 								particleCount: 250,
-								height: '90vh',
+								height: '50vh',
 							}}
 						/>
 					)}
