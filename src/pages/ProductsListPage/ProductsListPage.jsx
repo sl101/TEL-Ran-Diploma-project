@@ -19,13 +19,8 @@ export const ProductsListPage = () => {
 		(store) => store.products.productslist
 	).filter((product) => product.rangeVisible && product.discontVisible);
 
-	// useEffect(() => {
-	// 	window.scrollTo(0, 0);
-	// }, [state]);
-
 	useEffect(() => {
 		window.scrollTo(0, 0);
-		// console.log('state: ', state);
 		if (state === 'category') {
 			dispatch(fetchCategoryListById(id));
 		} else {
@@ -33,15 +28,12 @@ export const ProductsListPage = () => {
 		}
 	}, [dispatch, id, state]);
 
-	// console.log('ProductsListPage pageTitle: ', pageTitle);
-	// console.log('ProductsListPage productsList: ', productsList);
 	return (
 		<section className={styles.products_page}>
 			<div className="container">
 				<h1 className="title">{pageTitle.title}</h1>
 				<Filter content={state} />
 				<ProductsList
-					quantity={8}
 					pageState={state}
 					products={productsList.filter((el) => el.rangeVisible)}
 				/>

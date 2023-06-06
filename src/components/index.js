@@ -16,6 +16,7 @@ export { PhoneForm } from './PhoneForm/PhoneForm';
 export { Alert } from './Alert/Alert';
 
 export { ProductsList } from './ProductsList/ProductsList';
+export { Pagination } from './Pagination/Pagination';
 export { ProductItem } from './ProductItem/ProductItem';
 export { ProductPrice } from './ProductPrice/ProductPrice';
 
