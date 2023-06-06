@@ -9,7 +9,8 @@ import {
 	sortPriceByAscAction,
 	sortPriceByDescAction,
 	sortProductsByIdAction,
-	sortProductsByNameAction,
+	sortProductsByNameAFromAction,
+	sortProductsByNameZFromAction,
 } from '../../store/productsReducer';
 
 export const Filter = ({ content }) => {
@@ -60,8 +61,11 @@ export const Filter = ({ content }) => {
 			case 'priceDesc':
 				dispatch(sortPriceByDescAction());
 				break;
-			case 'name':
-				dispatch(sortProductsByNameAction());
+			case 'nameA':
+				dispatch(sortProductsByNameAFromAction());
+				break;
+			case 'nameZ':
+				dispatch(sortProductsByNameZFromAction());
 				break;
 			default:
 				break;
@@ -120,7 +124,8 @@ export const Filter = ({ content }) => {
 						<option value="default">by default</option>
 						<option value="priceAsc">price by ascending</option>
 						<option value="priceDesc">price by descending</option>
-						<option value="name">by product title</option>
+						<option value="nameA">by product title from A to Z</option>
+						<option value="nameZ">by product title from Z to A</option>
 					</select>
 					<SlArrowDown className={styles.select_icon} />
 				</div>

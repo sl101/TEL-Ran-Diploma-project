@@ -5,7 +5,8 @@ const FILTER_BY_DISCONT = '[PRODUCTS] FILTER_BY_DISCONT';
 const SORT_BY_ID = '[PRODUCTS] SORT_BY_ID';
 const SORT_PRICE_BY_DESC = '[PRODUCTS] SORT_PRICE_BY_DESC';
 const SORT_PRICE_BY_ASC = '[PRODUCTS] SORT_PRICE_BY_ASC';
-const SORT_BY_NAME = '[PRODUCTS] SORT_BY_NAME';
+const SORT_BY_NAME_FROM_A = '[PRODUCTS] SORT_BY_NAME_FROM_A';
+const SORT_BY_NAME_FROM_Z = '[PRODUCTS] SORT_BY_NAME_FROM_Z';
 
 const defaultState = {
 	pageTitle: {},
@@ -92,13 +93,23 @@ export const productsReducer = (state = defaultState, action) => {
 				}),
 			};
 
-		case SORT_BY_NAME:
+		case SORT_BY_NAME_FROM_A:
 			return {
 				...state,
 				productslist: [...state.productslist].sort((a, b) => {
 					const titleA = a.title.toUpperCase();
 					const titleB = b.title.toUpperCase();
 					return titleA === titleB ? 0 : titleA > titleB ? 1 : -1;
+				}),
+			};
+
+		case SORT_BY_NAME_FROM_Z:
+			return {
+				...state,
+				productslist: [...state.productslist].sort((a, b) => {
+					const titleA = a.title.toUpperCase();
+					const titleB = b.title.toUpperCase();
+					return titleA === titleB ? 0 : titleA > titleB ? -1 : 1;
 				}),
 			};
 
@@ -136,6 +147,9 @@ export const sortPriceByAscAction = () => ({
 	type: SORT_PRICE_BY_ASC,
 });
 
-export const sortProductsByNameAction = () => ({
-	type: SORT_BY_NAME,
+export const sortProductsByNameAFromAction = () => ({
+	type: SORT_BY_NAME_FROM_A,
+});
+export const sortProductsByNameZFromAction = () => ({
+	type: SORT_BY_NAME_FROM_Z,
 });

@@ -1,0 +1,47 @@
+.pages_list {
+	margin: 40px auto 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 20px
+}
+
+.page_item {
+	flex-shrink: 0;
+
+}
+
+.num_btn {
+	position: relative;
+	width: 40px;
+	height: 40px;
+
+	line-height: 40px;
+	text-align: center;
+
+	border: 1px solid var(--a7-color);
+	background-color: var(--ui-button-color);
+	color: var(--black-color);
+	border-radius: 50%;
+
+	cursor: pointer;
+	transition: color var(--hover-time) ease;
+}
+
+.num_btn.active {
+	color: var(--accent-color)
+}
+
+@media (min-width: 762px) {
+
+	.num_btn:focus {}
+
+	.num_btn:hover {
+		color: var(--ui-color)
+	}
+
+	.num_btn:active {
+		top: 1px;
+	}
+
+}

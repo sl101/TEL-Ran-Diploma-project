@@ -9,6 +9,7 @@
 	--brand-linear: linear-gradient(to bottom, #a1e2eb 0%, #a4ea9f 100%);
 	--ui-linear: linear-gradient(262.69deg, #339933 -0.43%, #006300 104.36%);
 	--accent-color: #ff32a1;
+	--error-color: rgb(240, 0, 0);
 
 	--a7-color: #a7a7a7;
 	--c0-color: #c0c0c0;
