@@ -4,9 +4,8 @@ import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductByID } from '../../asyncActions/products';
 import { base_url } from '../../asyncActions/url';
-import { ProductPrice } from './../../components/ProductPrice/ProductPrice';
-import { Button } from './../../components/UI/Button/Button';
-import { addToCartAction } from '../../store/cartReducer';
+import { ProductPrice, Button } from '../../components/';
+import { addProductToCart } from '../../store/cartSlice';
 
 export const ProductInfoPage = () => {
 	const { id } = useParams();
@@ -32,7 +31,7 @@ export const ProductInfoPage = () => {
 
 	const addToCart = (e) => {
 		e.preventDefault();
-		dispatch(addToCartAction(productInfo));
+		dispatch(addProductToCart(productInfo));
 	};
 
 	return (

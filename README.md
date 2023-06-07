@@ -24,3 +24,5 @@ Project was written using client-server architect, using by REACT library.
 - For page routing, the Outlet component is used.
 
 - For switch to the ProductListPage, which can display different content, the useLocation hook is used, which defines in state a pointer to the content.
+
+- ## next Step it was rewrite project using @reduxjs/toolkit library

@@ -3,6 +3,7 @@ import { Pagination, ProductItem } from '../';
 import styles from './ProductsList.module.css';
 
 export const ProductsList = ({ products }) => {
+	console.log('ProductsList: ', products);
 	const [currentPage, setCurrentPage] = useState(1);
 	const quantity = 8;
 

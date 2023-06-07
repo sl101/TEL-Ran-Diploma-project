@@ -7,10 +7,10 @@ import { ProductPrice } from './../ProductPrice/ProductPrice';
 import { NavLink } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import {
-	addToCartAction,
-	decrCartProductAction,
-	removeCartProductAction,
-} from '../../store/cartReducer';
+	addProductToCart,
+	decrementProductInCart,
+	removeProductFromCartById,
+} from '../../store/cartSlice';
 
 export const CartItem = (props) => {
 	const { id, image, title, price, discont_price, amount } = props;
@@ -19,7 +19,7 @@ export const CartItem = (props) => {
 		<li className={styles.cart_item}>
 			<IoMdClose
 				className={styles.del_btn}
-				onClick={() => dispatch(removeCartProductAction(id))}
+				onClick={() => dispatch(removeProductFromCartById(id))}
 			/>
 
 			<NavLink to={`/products/${id}`} className={styles.item_wrapper}>
@@ -32,12 +32,12 @@ export const CartItem = (props) => {
 				<div className={styles.counter}>
 					<AiOutlineMinus
 						className={styles.count_btn}
-						onClick={() => dispatch(decrCartProductAction(id))}
+						onClick={() => dispatch(decrementProductInCart(id))}
 					/>
 					<p>{amount}</p>
 					<AiOutlinePlus
 						className={styles.count_btn}
-						onClick={() => dispatch(addToCartAction(props))}
+						onClick={() => dispatch(addProductToCart(props))}
 					/>
 				</div>
 			</div>

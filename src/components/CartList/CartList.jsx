@@ -4,8 +4,6 @@ import { CartItem } from '../CartItem/CartItem';
 
 export const CartList = () => {
 	const cartList = useSelector((store) => store.cart.cartList);
-	// const { cartList } = cart;
-	// console.log('CartList: ', cartList);
 
 	return (
 		<div className={styles.cart_list}>
