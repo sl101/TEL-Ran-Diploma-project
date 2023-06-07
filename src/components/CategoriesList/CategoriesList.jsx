@@ -13,8 +13,6 @@ export const CategoriesList = ({ listLength = 8 }) => {
 
 	const targetCategories = categories.slice(0, listLength);
 
-	// console.log('CategoriesList: ', categories);
-
 	return (
 		<ul className={styles.categories_list}>
 			{targetCategories.map((category, index) => (
