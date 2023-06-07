@@ -3,9 +3,9 @@ import { Button } from './../UI/Button/Button';
 import { forwardRef, useEffect, useState } from 'react';
 import { IoMdClose } from 'react-icons/io';
 import { fetchGetOrder } from '../../asyncActions/order';
-import { cleanCartAction } from '../../store/cartReducer';
 import { useDispatch } from 'react-redux';
 import ConfettiExplosion from 'react-confetti-explosion';
+import { removeAllProductsFromCart } from '../../store/cartSlice';
 
 export const Alert = forwardRef(
 	({ message, text, content, setShowMessage }, ref) => {
@@ -29,7 +29,7 @@ export const Alert = forwardRef(
 			setIsExploding(true);
 			setShowMessage(false);
 			if (content === 'order') {
-				dispatch(cleanCartAction());
+				dispatch(removeAllProductsFromCart());
 			}
 		};
 

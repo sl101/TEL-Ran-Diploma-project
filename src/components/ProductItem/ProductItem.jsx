@@ -1,10 +1,9 @@
 import { base_url } from '../../asyncActions/url';
-import styles from './ProductItem.module.css';
-import { ProductPrice } from '../';
-import { Button } from './../UI/Button/Button';
+import { ProductPrice, Button } from '../';
 import { useDispatch } from 'react-redux';
-import { addToCartAction } from '../../store/cartReducer';
 import { NavLink } from 'react-router-dom';
+import { addProductToCart } from '../../store/cartSlice';
+import styles from './ProductItem.module.css';
 
 export const ProductItem = (props) => {
 	const { id, image, title, price, discont_price } = props;
@@ -13,7 +12,7 @@ export const ProductItem = (props) => {
 
 	const addToCart = (e) => {
 		e.preventDefault();
-		dispatch(addToCartAction(props));
+		dispatch(addProductToCart(props));
 	};
 
 	return (

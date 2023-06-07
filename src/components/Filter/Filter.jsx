@@ -4,14 +4,14 @@ import { SlArrowDown } from 'react-icons/sl';
 import { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
 import {
-	filterProductsByDiscontAction,
-	filterProductsByPriceRangeAction,
-	sortPriceByAscAction,
-	sortPriceByDescAction,
-	sortProductsByIdAction,
-	sortProductsByNameAFromAction,
-	sortProductsByNameZFromAction,
-} from '../../store/productsReducer';
+	filterProductsByDiscont,
+	filterProductsByPriceRange,
+	sortPriceByAsc,
+	sortPriceByDesc,
+	sortProductsById,
+	sortProductsByNameAFrom,
+	sortProductsByNameZFrom,
+} from '../../store/productsSlice';
 
 export const Filter = ({ content }) => {
 	const refFrom = useRef();
@@ -43,29 +43,29 @@ export const Filter = ({ content }) => {
 		};
 		console.log(range);
 
-		dispatch(filterProductsByPriceRangeAction(range));
+		dispatch(filterProductsByPriceRange(range));
 	};
 
 	const handleDiscont = (e) => {
-		dispatch(filterProductsByDiscontAction(e.target.checked));
+		dispatch(filterProductsByDiscont(e.target.checked));
 	};
 
 	const handleSelect = (e) => {
 		switch (e.target.value) {
 			case 'default':
-				dispatch(sortProductsByIdAction());
+				dispatch(sortProductsById());
 				break;
 			case 'priceAsc':
-				dispatch(sortPriceByAscAction());
+				dispatch(sortPriceByAsc());
 				break;
 			case 'priceDesc':
-				dispatch(sortPriceByDescAction());
+				dispatch(sortPriceByDesc());
 				break;
 			case 'nameA':
-				dispatch(sortProductsByNameAFromAction());
+				dispatch(sortProductsByNameAFrom());
 				break;
 			case 'nameZ':
-				dispatch(sortProductsByNameZFromAction());
+				dispatch(sortProductsByNameZFrom());
 				break;
 			default:
 				break;

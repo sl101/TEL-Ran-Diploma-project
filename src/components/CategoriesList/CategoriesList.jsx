@@ -11,9 +11,9 @@ export const CategoriesList = ({ listLength = 8 }) => {
 
 	const categories = useSelector((store) => store.categories);
 
-	const targetCategories = categories
-		.sort(() => Math.random() - 0.5)
-		.slice(0, listLength);
+	const targetCategories = categories.slice(0, listLength);
+
+	// console.log('CategoriesList: ', categories);
 
 	return (
 		<ul className={styles.categories_list}>
