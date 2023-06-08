@@ -1,6 +1,5 @@
+import { Contacts, Map } from '../';
 import styles from './Footer.module.css';
-import { Contacts } from '../';
-import { Map } from '../';
 
 export const Footer = () => {
 	return (

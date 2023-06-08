@@ -1,11 +1,11 @@
 import { useEffect } from 'react';
-import styles from './ProductInfoPage.module.css';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductByID } from '../../asyncActions/products';
-import { base_url } from '../../asyncActions/url';
-import { ProductPrice, Button } from '../../components/';
 import { addProductToCart } from '../../store/cartSlice';
+import { ProductPrice, Button } from '../../components/';
+import { base_url } from '../../asyncActions/url';
+import styles from './ProductInfoPage.module.css';
 
 export const ProductInfoPage = () => {
 	const { id } = useParams();

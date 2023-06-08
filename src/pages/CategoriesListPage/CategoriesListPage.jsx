@@ -1,9 +1,8 @@
+import { useEffect } from 'react';
 import { CategoriesList } from '../../components';
 import styles from './CategoriesListPage.module.css';
-import { useEffect } from 'react';
 
 export const CategoriesListPage = () => {
-
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);

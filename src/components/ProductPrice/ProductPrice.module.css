@@ -64,7 +64,6 @@
 }
 
 @media (max-width: 762px) {
-
 	.price_wrapper.cart {
 		width: auto;
 		padding-right: 0;
@@ -75,5 +74,4 @@
 	.price_wrapper.info {
 		margin: 20px 0 20px;
 	}
-
 }

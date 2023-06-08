@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import styles from './Catalog.module.css';
 import { CategoriesList } from '../';
+import styles from './Catalog.module.css';
 
 export const Catalog = () => {
 	return (

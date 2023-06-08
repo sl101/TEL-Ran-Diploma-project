@@ -1,12 +1,11 @@
-import styles from './Header.module.css';
-import logo from '../../media/images/logo.png';
-import { HashLink } from 'react-router-hash-link';
-
-import { Burger, Button, Navigation } from '../';
-import { NavLink } from 'react-router-dom';
 import { useEffect, useState } from 'react';
-import { HiOutlineShoppingBag } from 'react-icons/hi';
 import { useSelector } from 'react-redux';
+import { HashLink } from 'react-router-hash-link';
+import { NavLink } from 'react-router-dom';
+import { HiOutlineShoppingBag } from 'react-icons/hi';
+import { Burger, Button, Navigation } from '../';
+import logo from '../../media/images/logo.png';
+import styles from './Header.module.css';
 
 export const Header = () => {
 	const totalAmount = useSelector((store) => store.cart.totalAmount);

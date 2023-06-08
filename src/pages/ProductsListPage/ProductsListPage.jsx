@@ -1,12 +1,12 @@
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useLocation, useParams } from 'react-router-dom';
 import { Filter, ProductsList } from '../../components';
-import styles from './ProductsListPage.module.css';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
 import {
 	fetchAllProductsList,
 	fetchCategoryListById,
 } from '../../asyncActions/products';
+import styles from './ProductsListPage.module.css';
 
 export const ProductsListPage = () => {
 	const { state } = useLocation();
@@ -33,10 +33,7 @@ export const ProductsListPage = () => {
 			<div className="container">
 				<h1 className="title">{pageTitle.title}</h1>
 				<Filter content={state} />
-				<ProductsList
-					pageState={state}
-					products={productsList.filter((el) => el.rangeVisible)}
-				/>
+				<ProductsList products={productsList} />
 			</div>
 		</section>
 	);

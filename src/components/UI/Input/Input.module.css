@@ -76,7 +76,6 @@
 }
 
 @media (min-width: 762px) {
-
 	input:focus {
 		box-shadow: inset 0 0 19px var(--black-color);
 	}
@@ -92,13 +91,10 @@
 	.input.filter:hover::placeholder {
 		color: var(--ui-color);
 	}
-
 }
 
 @media (max-width: 762px) {
-
 	.input.sale {
 		max-width: 100%;
 	}
-
 }

@@ -8,7 +8,6 @@
 
 .page_item {
 	flex-shrink: 0;
-
 }
 
 .num_btn {
@@ -33,9 +32,6 @@
 }
 
 @media (min-width: 762px) {
-
-	.num_btn:focus {}
-
 	.num_btn:hover {
 		color: var(--ui-color)
 	}
@@ -43,5 +39,4 @@
 	.num_btn:active {
 		top: 1px;
 	}
-
 }

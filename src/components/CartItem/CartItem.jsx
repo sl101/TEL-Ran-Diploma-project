@@ -1,16 +1,16 @@
-import styles from './CartItem.module.css';
+import { useDispatch } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 import { IoMdClose } from 'react-icons/io';
 import { AiOutlineMinus } from 'react-icons/ai';
 import { AiOutlinePlus } from 'react-icons/ai';
-import { base_url } from './../../asyncActions/url';
-import { ProductPrice } from './../ProductPrice/ProductPrice';
-import { NavLink } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { ProductPrice } from '../';
 import {
 	addProductToCart,
 	decrementProductInCart,
 	removeProductFromCartById,
 } from '../../store/cartSlice';
+import { base_url } from './../../asyncActions/url';
+import styles from './CartItem.module.css';
 
 export const CartItem = (props) => {
 	const { id, image, title, price, discont_price, amount } = props;

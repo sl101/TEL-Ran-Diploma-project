@@ -6,7 +6,7 @@
 	display: flex;
 	flex-wrap: wrap-reverse;
 	justify-content: space-between;
-	align-items: start;
+	align-items: flex-start;
 	gap: 20px;
 }
 
@@ -36,7 +36,6 @@
 }
 
 @media (max-width: 1392px) {
-
 	.cart_content {
 		max-width: 100%;
 	}

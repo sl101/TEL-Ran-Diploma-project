@@ -58,7 +58,6 @@
 	.info_image {
 		min-height: auto;
 	}
-
 }
 
 @media (max-width: 762px) {
@@ -71,5 +70,4 @@
 		margin-top: 40px;
 		gap: 10px;
 	}
-
 }
