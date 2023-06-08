@@ -27,13 +27,7 @@
 }
 
 @media (min-width: 762px) {
-
-	.category_item:focus {}
-
 	.category_item:hover .img_wrapper img {
 		transform: scale(1.1);
 	}
-
-	.category_item:active {}
-
 }

@@ -1,8 +1,7 @@
-import styles from './Contacts.module.css';
+import { Link } from 'react-router-dom';
 import { SlSocialInstagram } from 'react-icons/sl';
 import { SiWhatsapp } from 'react-icons/si';
-import { Link } from 'react-router-dom';
-import { NavLink } from 'react-router-dom';
+import styles from './Contacts.module.css';
 
 export const Contacts = () => {
 	return (

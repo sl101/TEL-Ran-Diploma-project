@@ -1,13 +1,12 @@
 import { useEffect } from 'react';
-import styles from './ShopingCartPage.module.css';
-import { NavLink } from 'react-router-dom';
-import { IoIosArrowForward } from 'react-icons/io';
-import { CartList, Order } from '../../components';
 import { useSelector } from 'react-redux';
+import { NavLink } from 'react-router-dom';
+import { CartList, Order } from '../../components';
+import { IoIosArrowForward } from 'react-icons/io';
+import styles from './ShopingCartPage.module.css';
 
 export const ShopingCartPage = () => {
 	const totalSumm = useSelector((store) => store.cart.totalSumm);
-	// console.log('ShopingCartPage totalSumm: ', totalSumm);
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);

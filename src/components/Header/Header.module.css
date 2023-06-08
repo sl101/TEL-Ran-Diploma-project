@@ -61,7 +61,6 @@
 }
 
 @media (min-width: 762px) {
-
 	.cart_link:focus .cart_total {
 		border-color: var(--92-color);
 	}

@@ -1,10 +1,8 @@
 import { useRef, useState } from 'react';
-import { Button } from '../UI/Button/Button';
-import { Input } from '../UI/Input/Input';
-import styles from './PhoneForm.module.css';
-import { Alert } from '../Alert/Alert';
-import { CSSTransition } from 'react-transition-group';
 import { useForm } from 'react-hook-form';
+import { CSSTransition } from 'react-transition-group';
+import { Alert, Input, Button } from '../';
+import styles from './PhoneForm.module.css';
 
 export const PhoneForm = ({
 	contentInput,

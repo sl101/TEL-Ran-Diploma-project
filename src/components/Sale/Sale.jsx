@@ -1,8 +1,8 @@
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ProductsList } from '../';
-import styles from './Sale.module.css';
-import { useEffect } from 'react';
 import { fetchAllProductsList } from './../../asyncActions/products';
+import styles from './Sale.module.css';
 
 export const Sale = () => {
 	let dispatch = useDispatch();

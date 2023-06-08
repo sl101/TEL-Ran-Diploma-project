@@ -1,13 +1,13 @@
-import styles from './CategoriesList.module.css';
-import { CategoryItem } from '../';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
+import { CategoryItem } from '../';
 import { fetchCategoriesList } from '../../asyncActions/categories';
+import styles from './CategoriesList.module.css';
 
 export const CategoriesList = ({ listLength = 8 }) => {
 	const dispatch = useDispatch();
 
-	useEffect(() => dispatch(fetchCategoriesList('/categories/all')), []);
+	useEffect(() => dispatch(fetchCategoriesList('/categories/all')), [dispatch]);
 
 	const categories = useSelector((store) => store.categories);
 

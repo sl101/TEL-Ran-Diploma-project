@@ -1,17 +1,22 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Pagination, ProductItem } from '../';
 import styles from './ProductsList.module.css';
 
 export const ProductsList = ({ products }) => {
-	console.log('ProductsList: ', products);
 	const [currentPage, setCurrentPage] = useState(1);
 	const quantity = 8;
 
-	const lastElem = currentPage * quantity;
-	const firstElem = lastElem - quantity;
-	const pagesNumber = Math.ceil(products.length / quantity);
+	let lastElem = currentPage * quantity;
+	let firstElem = lastElem - quantity;
+	let pagesNumber = Math.ceil(products.length / quantity);
 
 	const productsListPage = products.slice(firstElem, lastElem);
+
+	useEffect(() => {
+		if (Math.ceil(products.length / quantity) < currentPage) {
+			setCurrentPage(Math.ceil(products.length / quantity) || 1);
+		}
+	}, [products, currentPage]);
 
 	return (
 		<>

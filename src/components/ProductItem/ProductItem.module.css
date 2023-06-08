@@ -35,7 +35,6 @@
 }
 
 @media (min-width: 762px) {
-
 	.product_item:hover .product_title {
 		color: var(--ui-color);
 	}

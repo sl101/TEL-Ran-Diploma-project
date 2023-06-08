@@ -1,8 +1,7 @@
-import styles from './Filter.module.css';
-import { Input } from '../';
-import { SlArrowDown } from 'react-icons/sl';
-import { useEffect, useRef } from 'react';
 import { useDispatch } from 'react-redux';
+import { useEffect, useRef } from 'react';
+import { SlArrowDown } from 'react-icons/sl';
+import { Input } from '../';
 import {
 	filterProductsByDiscont,
 	filterProductsByPriceRange,
@@ -12,6 +11,7 @@ import {
 	sortProductsByNameAFrom,
 	sortProductsByNameZFrom,
 } from '../../store/productsSlice';
+import styles from './Filter.module.css';
 
 export const Filter = ({ content }) => {
 	const refFrom = useRef();
@@ -41,7 +41,6 @@ export const Filter = ({ content }) => {
 					? newValue || Infinity
 					: refTo.current.value || Infinity,
 		};
-		console.log(range);
 
 		dispatch(filterProductsByPriceRange(range));
 	};

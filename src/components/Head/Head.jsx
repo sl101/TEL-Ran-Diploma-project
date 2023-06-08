@@ -1,6 +1,5 @@
-import styles from './Head.module.css';
-// import flowers from '../../media/images/main_flowers.png';
 import { HashLink } from 'react-router-hash-link';
+import styles from './Head.module.css';
 
 export const Head = () => {
 	const scrollWithOffset = (el) => {

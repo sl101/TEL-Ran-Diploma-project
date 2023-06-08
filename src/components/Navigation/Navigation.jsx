@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom';
-import styles from './Navigation.module.css';
 import { HashLink } from 'react-router-hash-link';
+import styles from './Navigation.module.css';
 
 export const Navigation = ({ ...other }) => {
 	return (

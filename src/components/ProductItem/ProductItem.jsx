@@ -1,8 +1,8 @@
-import { base_url } from '../../asyncActions/url';
-import { ProductPrice, Button } from '../';
 import { useDispatch } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import { addProductToCart } from '../../store/cartSlice';
+import { ProductPrice, Button } from '../';
+import { base_url } from '../../asyncActions/url';
 import styles from './ProductItem.module.css';
 
 export const ProductItem = (props) => {
