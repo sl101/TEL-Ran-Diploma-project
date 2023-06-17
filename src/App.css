@@ -40,8 +40,7 @@ body {
 }
 
 #root {
-	/* max-width: 1440px; */
-	max-width: 1920px;
+	max-width: 100%;
 	min-height: 100vh;
 	margin: 0 auto;
 
