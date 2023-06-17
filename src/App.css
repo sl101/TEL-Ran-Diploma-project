@@ -40,7 +40,8 @@ body {
 }
 
 #root {
-	max-width: 1440px;
+	/* max-width: 1440px; */
+	max-width: 1920px;
 	min-height: 100vh;
 	margin: 0 auto;
 
@@ -62,6 +63,12 @@ body {
 	font-weight: 700;
 	font-size: 40px;
 	line-height: 40px;
+}
+
+@media (min-width: 1600px){
+	#root{
+		padding: 0 60px;
+	}
 }
 
 /* ========= alert window ====== */
@@ -86,3 +93,4 @@ body {
 	transform: scale(0.9);
 	transition: opacity 300ms, transform 300ms;
 }
+
