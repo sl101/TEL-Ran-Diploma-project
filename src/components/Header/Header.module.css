@@ -1,5 +1,16 @@
 .header {
+	position:fixed;
+	z-index: 50;
+	width: 100%;
+	top: 0;
+	left: 0;
 	padding: 20px 0;
+	background-color: var(--white-color);
+}
+
+.header_content{
+	max-width: 1800px;
+	margin: 0 auto;
 }
 
 .header_wrapper {

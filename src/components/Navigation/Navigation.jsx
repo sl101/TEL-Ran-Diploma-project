@@ -3,11 +3,12 @@ import { HashLink } from 'react-router-hash-link';
 import styles from './Navigation.module.css';
 
 export const Navigation = ({ ...other }) => {
+
 	return (
 		<nav className={styles.nav}>
 			<ul className={styles.nav_list}>
 				<li className={styles.nav_item}>
-					<HashLink className={styles.nav_link} smooth to="/#header" {...other}>
+					<HashLink className={styles.nav_link} smooth to="/#head" {...other}>
 						Main Page
 					</HashLink>
 				</li>

@@ -4,11 +4,11 @@ import styles from './Head.module.css';
 export const Head = () => {
 	const scrollWithOffset = (el) => {
 		const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
-		const yOffset = window.innerWidth < 762 ? -98 : 0;
+		const yOffset = -98;
 		window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
 	};
 	return (
-		<section className={styles.head}>
+		<section id="head" className={styles.head}>
 			<div className="container">
 				<div className={styles.head_content}>
 					<div className={styles.head_inner}>

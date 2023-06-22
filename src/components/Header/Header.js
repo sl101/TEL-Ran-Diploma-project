@@ -49,42 +49,44 @@ export const Header = () => {
 	};
 
 	return (
-		<header id="header" className={styles.header}>
-			<div className="container">
-				<div className={styles.header_wrapper}>
-					<HashLink
-						className={styles.logo_wrapper}
-						smooth
-						to="/#header"
-						onClick={() => setActive(false)}
-					>
-						<div className={styles.logo}>
-							<img src={logo} alt="logo" />
+		<header id="home" className={styles.header}>
+			<div className={styles.header_content}>
+				<div className="container">
+					<div className={styles.header_wrapper}>
+						<HashLink
+							className={styles.logo_wrapper}
+							smooth
+							to="/#head"
+							onClick={() => setActive(false)}
+						>
+							<div className={styles.logo}>
+								<img src={logo} alt="logo" />
+							</div>
+						</HashLink>
+
+						<div className={`${styles.menu} ${styles[active && 'active']}`}>
+							<NavLink
+								to="/categories"
+								className={styles.btn_wrapper}
+								tabIndex="-1"
+								onClick={() => setActive(false)}
+							>
+								<Button text="Catalog" content="header_btn" />
+							</NavLink>
+
+							<Navigation onClick={() => setActive(false)} />
+
+							<NavLink
+								className={styles.cart_link}
+								to="/cart"
+								onClick={() => setActive(false)}
+							>
+								<HiOutlineShoppingBag />
+								<p className={styles.cart_total}>{totalAmount}</p>
+							</NavLink>
 						</div>
-					</HashLink>
-
-					<div className={`${styles.menu} ${styles[active && 'active']}`}>
-						<NavLink
-							to="/categories"
-							className={styles.btn_wrapper}
-							tabIndex="-1"
-							onClick={() => setActive(false)}
-						>
-							<Button text="Catalog" content="header_btn" />
-						</NavLink>
-
-						<Navigation onClick={() => setActive(false)} />
-
-						<NavLink
-							className={styles.cart_link}
-							to="/cart"
-							onClick={() => setActive(false)}
-						>
-							<HiOutlineShoppingBag />
-							<p className={styles.cart_total}>{totalAmount}</p>
-						</NavLink>
+						<Burger onClick={toggleActive} active={active && 'active'} />
 					</div>
-					<Burger onClick={toggleActive} active={active && 'active'} />
 				</div>
 			</div>
 		</header>
