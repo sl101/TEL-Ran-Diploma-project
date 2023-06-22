@@ -15,7 +15,6 @@ Project was written using client-server architect, using by REACT library.
 - redux-thunk,
 - react-hook-form,
 - react-icons,
-- uuid,
 - react-transition-group,
 - react-confetti-explosion
 
