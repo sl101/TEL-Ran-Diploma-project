@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/TEL-Ran-Diploma-project/static/css/main.d55683f2.css",
-    "main.js": "/TEL-Ran-Diploma-project/static/js/main.928eae33.js",
+    "main.css": "/TEL-Ran-Diploma-project/static/css/main.2d4abaf8.css",
+    "main.js": "/TEL-Ran-Diploma-project/static/js/main.4cd09e14.js",
     "static/media/main_flowers.png": "/TEL-Ran-Diploma-project/static/media/main_flowers.219152481630c1bc0f3f.png",
     "static/media/notfound.jpg": "/TEL-Ran-Diploma-project/static/media/notfound.60119eae40205e316bde.jpg",
     "static/media/Montserrat-Bold.woff": "/TEL-Ran-Diploma-project/static/media/Montserrat-Bold.f29395fabb87619d91d3.woff",
@@ -12,11 +12,11 @@
     "static/media/Montserrat-Medium.woff2": "/TEL-Ran-Diploma-project/static/media/Montserrat-Medium.214fb9402a627ac80276.woff2",
     "static/media/Montserrat-SemiBold.woff2": "/TEL-Ran-Diploma-project/static/media/Montserrat-SemiBold.4bbde92d3f440918b593.woff2",
     "index.html": "/TEL-Ran-Diploma-project/index.html",
-    "main.d55683f2.css.map": "/TEL-Ran-Diploma-project/static/css/main.d55683f2.css.map",
-    "main.928eae33.js.map": "/TEL-Ran-Diploma-project/static/js/main.928eae33.js.map"
+    "main.2d4abaf8.css.map": "/TEL-Ran-Diploma-project/static/css/main.2d4abaf8.css.map",
+    "main.4cd09e14.js.map": "/TEL-Ran-Diploma-project/static/js/main.4cd09e14.js.map"
   },
   "entrypoints": [
-    "static/css/main.d55683f2.css",
-    "static/js/main.928eae33.js"
+    "static/css/main.2d4abaf8.css",
+    "static/js/main.4cd09e14.js"
   ]
 }
