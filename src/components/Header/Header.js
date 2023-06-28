@@ -56,7 +56,7 @@ export const Header = () => {
 						<HashLink
 							className={styles.logo_wrapper}
 							smooth
-							to="/#head"
+							to="/#home"
 							onClick={() => setActive(false)}
 						>
 							<div className={styles.logo}>

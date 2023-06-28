@@ -14,7 +14,7 @@ import {
 
 function App() {
 	return (
-		<>
+		<div className='app'>
 			<Routes>
 				<Route path="/" element={<Layout />}>
 					<Route index element={<MainPage />} />
@@ -26,7 +26,7 @@ function App() {
 					<Route path="*" element={<NotFoundPage />} />
 				</Route>
 			</Routes>
-		</>
+		</div>
 	);
 }
 

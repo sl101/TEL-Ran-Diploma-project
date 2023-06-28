@@ -8,7 +8,7 @@ export const Navigation = ({ ...other }) => {
 		<nav className={styles.nav}>
 			<ul className={styles.nav_list}>
 				<li className={styles.nav_item}>
-					<HashLink className={styles.nav_link} smooth to="/#head" {...other}>
+					<HashLink className={styles.nav_link} smooth to="/#home" {...other}>
 						Main Page
 					</HashLink>
 				</li>

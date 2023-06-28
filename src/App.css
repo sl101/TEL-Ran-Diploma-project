@@ -47,10 +47,14 @@ body {
 	line-height: 40px;
 }
 
-@media (min-width: 1600px){
-body{
+@media (min-width: 1600px) {
+	body {
 		padding: 0 60px;
 	}
+}
+
+.app {
+	padding-top: 112px;
 }
 
 /* ========= alert window ====== */
@@ -75,4 +79,3 @@ body{
 	transform: scale(0.9);
 	transition: opacity 300ms, transform 300ms;
 }
-
