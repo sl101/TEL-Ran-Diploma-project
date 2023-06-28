@@ -25,11 +25,15 @@ This is an online store project developed on the basis of the React library. Thi
 
 - next Step it was rewrite project using @reduxjs/toolkit library
 
-[link to backend](https://github.com/HaykInanc/telran_project_backend)
 The project is integrated with an API that provides access to the product database and other necessary data. This allows the application to get up-to-date product information, process orders, and interact with the server to update data.
 This API needs to be downloaded and run locally.
 
-To start the project you will need:
+To start backend you will need: -[download repo](https://github.com/HaykInanc/telran_project_backend)
 
+- go to folder with backend
 - npm i
 - npm run dev
+
+##
+
+[open a project using technology gh-pages](https://sl101.github.io/TEL-Ran-Diploma-project/)
