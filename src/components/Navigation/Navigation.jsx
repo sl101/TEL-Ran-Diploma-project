@@ -8,19 +8,24 @@ export const Navigation = ({ ...other }) => {
 		<nav className={styles.nav}>
 			<ul className={styles.nav_list}>
 				<li className={styles.nav_item}>
-					<HashLink className={styles.nav_link} smooth to="/#home" {...other}>
+					<HashLink
+						className={styles.nav_link}
+						smooth
+						to="/#home"
+						{...other}>
 						Main Page
 					</HashLink>
 				</li>
 				<li>
-					<NavLink
+					<HashLink
 						className={styles.nav_link}
+						smooth
 						to="/products"
 						state="all"
 						{...other}
 					>
 						All products
-					</NavLink>
+					</HashLink>
 				</li>
 				<li>
 					<NavLink

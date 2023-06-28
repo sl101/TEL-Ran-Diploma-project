@@ -1,6 +1,5 @@
 import { useEffect } from 'react';
 import { Catalog, Head, Offer, Sale } from '../../components';
-import s from './MainPage.module.css';
 
 export const MainPage = () => {
 	useEffect(() => {
@@ -8,7 +7,7 @@ export const MainPage = () => {
 	}, []);
 
 	return (
-		<div id="home" className={s.main_page}>
+		<div>
 			<Head />
 			<Catalog />
 			<Offer />

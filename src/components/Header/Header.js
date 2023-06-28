@@ -49,7 +49,7 @@ export const Header = () => {
 	};
 
 	return (
-		<header id="home" className={styles.header}>
+		<header className={styles.header}>
 			<div className={styles.header_content}>
 				<div className="container">
 					<div className={styles.header_wrapper}>
@@ -62,8 +62,8 @@ export const Header = () => {
 							<div className={styles.logo}>
 								<img src={logo} alt="logo" />
 							</div>
-						</HashLink>
 
+						</HashLink>
 						<div className={`${styles.menu} ${styles[active && 'active']}`}>
 							<NavLink
 								to="/categories"

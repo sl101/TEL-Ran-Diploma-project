@@ -31,7 +31,7 @@ export const PhoneForm = ({
 		required: 'field must be filled',
 		pattern: {
 			value: /^\+?\d{7,11}$/,
-			message: 'invalid phone format',
+			message: 'phone number format 7 to 11 digits',
 		},
 	});
 

@@ -1,13 +1,17 @@
-# [TEL RAN diploma project](https://sl101.github.io/TEL-Ran-Diploma-project/)
+# [Garden project](https://sl101.github.io/TEL-Ran-Diploma-project/)
 
-## [UML diagram](https://drive.google.com/file/d/1OJCJnwSo_TIaP-eDAAK3Pq3j1Pl-Y-Gn/view?usp=sharing)
+## [UML diagram represents the decomposition of the project](https://drive.google.com/file/d/1OJCJnwSo_TIaP-eDAAK3Pq3j1Pl-Y-Gn/view?usp=sharing)
 
 ## [Project layout](https://www.figma.com/file/yNWvXvjZC0t8d9yBOpeEPy/Garden?type=design&node-id=4743-907&t=TqnTA5Oa08Ev1qRj-0)
 
-Project was written using client-server architect, using by REACT library.
+This is an online store project developed on the basis of the React library. This project is a full-featured e-commerce web application that combines responsive design with powerful functionality.
 
-### another libraries used during developing:
+### Technologies and libraries used in the project:
 
+- HTML/CSS
+- Flex/Grid models
+- LocalStorage
+- react
 - react-router-dom,
 - react-router-hash-link,
 - redux,
@@ -15,13 +19,17 @@ Project was written using client-server architect, using by REACT library.
 - redux-thunk,
 - react-hook-form,
 - react-icons,
-- react-transition-group,
-- react-confetti-explosion
+- react-confetti-explosion,
 
 - For deploy project to GitHub Pages using gh-pages dependencies
 
-- For page routing, the Outlet component is used.
+- next Step it was rewrite project using @reduxjs/toolkit library
 
-- For switch to the ProductListPage, which can display different content, the useLocation hook is used, which defines in state a pointer to the content.
+[link to backend](https://github.com/HaykInanc/telran_project_backend)
+The project is integrated with an API that provides access to the product database and other necessary data. This allows the application to get up-to-date product information, process orders, and interact with the server to update data.
+This API needs to be downloaded and run locally.
 
-- ## next Step it was rewrite project using @reduxjs/toolkit library
+To start the project you will need:
+
+- npm i
+- npm run dev

@@ -4,8 +4,6 @@
 
 .cart_wrapper {
 	display: flex;
-	/* flex-wrap: wrap-reverse; */
-	/* flex-wrap: wrap; */
 	justify-content: space-between;
 	align-items: flex-start;
 	gap: 20px;
@@ -36,8 +34,8 @@
 	width: 100%;
 }
 
-@media (min-width: 1600px){
-	.cart_content{
+@media (min-width: 1600px) {
+	.cart_content {
 		max-width: 100%;
 	}
 
@@ -48,7 +46,7 @@
 
 @media (max-width: 1392px) {
 	.cart_wrapper {
-		flex-wrap: wrap-reverse; 
+		flex-wrap: wrap-reverse;
 	}
 
 	.cart_content {

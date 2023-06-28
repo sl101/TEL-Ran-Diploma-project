@@ -14,7 +14,7 @@ import {
 
 function App() {
 	return (
-		<div className='app'>
+		<div id="home">
 			<Routes>
 				<Route path="/" element={<Layout />}>
 					<Route index element={<MainPage />} />
