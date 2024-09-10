@@ -1,1 +1,1 @@
-export const base_url = 'http://localhost:3333';
+export const base_url = "https://garden-server-lrop.onrender.com";
