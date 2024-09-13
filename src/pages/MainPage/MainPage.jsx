@@ -7,11 +7,11 @@ export const MainPage = () => {
 	}, []);
 
 	return (
-		<div>
+		<>
 			<Head />
 			<Catalog />
 			<Offer />
 			<Sale />
-		</div>
+		</>
 	);
 };

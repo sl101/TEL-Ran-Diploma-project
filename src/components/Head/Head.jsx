@@ -13,8 +13,8 @@ export const Head = () => {
 				<div className={styles.head_content}>
 					<div className={styles.head_inner}>
 						<h1 className={styles.head_title}>
-							Sale
-							<span>New season</span>
+							Amazing season
+							<span>garden ideas and tools</span>
 						</h1>
 						<HashLink
 							smooth

@@ -20,7 +20,8 @@
 	--6c-color: #6c6c6c;
 	--3a-color: #3a3a3a;
 	--2d-color: #2d2d2d;
-
+	--black-transparent-light: rgba(0, 0, 0, 0.2);
+	--black-transparent-color: rgba(0, 0, 0, 0.4);
 	--black-color: #000;
 
 	--hover-time: .4s;

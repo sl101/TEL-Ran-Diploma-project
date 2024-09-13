@@ -3,7 +3,7 @@
 	font-weight: 700;
 
 	border: 2px solid transparent;
-	border-radius: 5px;
+	border-radius: 10px;
 
 	background-color: var(--ui-color);
 	color: var(--white-color);
